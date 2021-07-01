@@ -5610,7 +5610,7 @@
     <tag k='ref:ibnr' v='3126' />
   </node>
   <node id='-102689' action='modify' visible='true' version='1' lat='50.04092935961' lon='19.95933734389'>
-    <tag k='name' v='Kraków Podgórze P2' />
+    <tag k='name' v='Kraków Podgórze (Peron 2)' />
     <tag k='railway' v='station' />
     <tag k='ref' v='79970' />
     <tag k='ref:ibnr' v='3127' />
