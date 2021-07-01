@@ -13140,7 +13140,7 @@
   <node id='-105098' action='modify' visible='true' lat='49.73277370969' lon='21.26360892177'>
     <tag k='name' v='Biecz' />
     <tag k='railway' v='station' />
-    <tag k='ref' v='24737' />
+    <tag k='ref' v='81786' />
     <tag k='ref:ibnr' v='3035' />
   </node>
   <node id='-105139' action='modify' visible='true' lat='51.29912719792' lon='18.16577552676'>
