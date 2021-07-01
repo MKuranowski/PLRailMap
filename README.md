@@ -8,7 +8,7 @@ the following operators:
 
 - [x] PolRegio
 - [x] Koleje Mazowieckie
-- [ ] PKP Intercity
+- [x] PKP Intercity
 - [ ] PKP SKM Trójmiasto
 - [ ] SKM Warszawa (see <https://gist.github.com/MKuranowski/0ca97a012d541899cb1f859cd0bab2e7#file-rail_platforms-json>)
 - [ ] Koleje Śląskie
@@ -28,8 +28,9 @@ These tags are always required
 - `railway=station`
 - `name` - name of the station in the local language
 - `ref` - PKP PLK code of the station (not necessarily an integer!)
-- `ref:ibnr` - Polish IBNR code of the station (not necessarily an integer!)
 
-If the station name is not in Polish, `name:pl` is also required.
+`ref:ibnr` is available for most stations, but not all of them.
+
+If the station name is not in Polish, `name:pl` should also be present.
 
 In order to merge Warszawa Zachodnia with its platform 8, there are 2 additional tags: `gtfs:location_type` and `gtfs:parent_station`. If one uses both 33506 and 34868 stations, the parent (33506P) should also be provided.
