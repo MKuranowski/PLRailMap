@@ -13209,7 +13209,7 @@
     <tag k='ref:ibnr' v='77' />
   </node>
   <node id='-105561' action='modify' visible='true' lat='50.57453645358' lon='22.88550852656'>
-    <tag k='name' v='Tereszpol Biłogorajski' />
+    <tag k='name' v='Tereszpol Biłgorajski' />
     <tag k='railway' v='station' />
     <tag k='ref' v='66449' />
     <tag k='ref:ibnr' v='2266' />
