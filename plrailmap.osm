@@ -4,6 +4,7 @@
     <tag k='name' v='Lotnisko Modlin' />
     <tag k='railway' v='station' />
     <tag k='ref' v='0' />
+    <tag k='ref:ibnr' v='0' />
   </node>
   <node id='-101756' action='modify' visible='true' version='1' lat='53.85269715953' lon='23.02612300308'>
     <tag k='name' v='Augustów' />
