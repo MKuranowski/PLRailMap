@@ -1,0 +1,35 @@
+PLRailMap
+=========
+
+This is a small repository with a OSM file with the Polish Railway Network.
+
+This dataset is not yet complete. For now, it only contains station nodes for
+the following operators:
+
+- [x] PolRegio
+- [x] Koleje Mazowieckie
+- [ ] PKP Intercity
+- [ ] PKP SKM Trójmiasto
+- [ ] SKM Warszawa (see <https://gist.github.com/MKuranowski/0ca97a012d541899cb1f859cd0bab2e7#file-rail_platforms-json>)
+- [ ] Koleje Śląskie
+- [ ] Koleje Dolnośląskie
+- [ ] Koleje Wielkopolskie
+- [ ] Warszawska Kolej Dojazdowa
+- [ ] Koleje Małopolskie
+- [ ] Łódzka Kolej Aglomeracyjna
+- [ ] Arriva RP
+
+In the future it would also be nice to also draw the rail lines.
+
+Tagging
+-------
+
+These tags are always required
+- `railway=station`
+- `name` - name of the station in the local language
+- `ref` - PKP PLK code of the station (not necessarily an integer!)
+- `ref:ibnr` - Polish IBNR code of the station (not necessarily an integer!)
+
+If the station name is not in Polish, `name:pl` is also required.
+
+In order to merge Warszawa Zachodnia with its platform 8, there are 2 additional tags: `gtfs:location_type` and `gtfs:parent_station`. If one uses both 33506 and 34868 stations, the parent (33506P) should also be provided.
