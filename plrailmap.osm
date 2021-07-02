@@ -6546,7 +6546,7 @@
     <tag k='ref:ibnr' v='3357' />
   </node>
   <node id='-102845' action='modify' visible='true' version='1' lat='49.81985050744' lon='22.82451615306'>
-    <tag k='name' v='Żurawica Osobowa' />
+    <tag k='name' v='Żurawica' />
     <tag k='railway' v='station' />
     <tag k='ref' v='84202' />
     <tag k='ref:ibnr' v='3358' />
