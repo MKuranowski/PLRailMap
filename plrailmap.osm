@@ -19226,6 +19226,12 @@
   <node id='-128872' action='modify' visible='true' lat='51.51179403565' lon='23.58535047054' />
   <node id='-128873' action='modify' visible='true' lat='51.51363018908' lon='23.58517884135' />
   <node id='-128874' action='modify' visible='true' lat='51.51455158642' lon='23.58526467204' />
+  <node id='-128880' action='modify' visible='true' lat='52.33688292412' lon='15.30142306745'>
+    <tag k='name' v='Łagów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='179242' />
+    <tag k='ref:ibnr' v='1249' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
