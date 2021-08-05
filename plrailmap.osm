@@ -21941,6 +21941,26 @@
     <tag k='ref' v='81455' />
     <tag k='ref:ibnr' v='3333' />
   </node>
+  <node id='-131778' action='modify' visible='true' lat='49.81673815357' lon='23.03380250394'>
+    <tag k='name' v='Mostiska II' />
+    <tag k='name:pl' v='Mościska II' />
+    <tag k='name:uk' v='Мостиська IІ' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='179301' />
+  </node>
+  <node id='-131872' action='modify' visible='true' lat='53.68632585205' lon='23.84914576471'>
+    <tag k='name' v='Grodno' />
+    <tag k='name:pl' v='Grodno' />
+    <tag k='name:ru' v='Гродно' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='179286' />
+  </node>
+  <node id='-131916' action='modify' visible='true' lat='50.31634624152' lon='18.95764409959'>
+    <tag k='name' v='Chorzów Stary' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='72207' />
+    <tag k='ref:ibnr' v='4063' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
