@@ -21961,6 +21961,12 @@
     <tag k='ref' v='72207' />
     <tag k='ref:ibnr' v='4063' />
   </node>
+  <node id='-131918' action='modify' visible='true' lat='50.01808' lon='20.05117'>
+    <tag k='name' v='Kraków Złocień' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='262870' />
+    <tag k='ref:ibnr' v='6582' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
