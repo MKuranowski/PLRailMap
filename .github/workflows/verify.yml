@@ -1,0 +1,14 @@
+name: CI
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    name: Verify stations
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.9"
+    - name: Run verification script
+      run: python verify.py
