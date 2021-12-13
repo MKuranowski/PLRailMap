@@ -775,7 +775,7 @@
     <tag k='ref:ibnr' v='168' />
   </node>
   <node id='-109444' action='modify' visible='true' version='1' lat='51.39107956687' lon='21.1559020539'>
-    <tag k='name' v='Radom' />
+    <tag k='name' v='Radom Główny' />
     <tag k='railway' v='station' />
     <tag k='ref' v='48355' />
     <tag k='ref:ibnr' v='169' />
@@ -1599,6 +1599,7 @@
     <tag k='name' v='Kępno' />
     <tag k='railway' v='station' />
     <tag k='ref' v='45401' />
+    <tag k='ref:2' v='178501' />
     <tag k='ref:ibnr' v='903' />
     <tag k='ref:polregio' v='178501' />
   </node>
@@ -22215,6 +22216,36 @@
     <tag k='ref' v='21428' />
     <tag k='ref:ibnr' v='5550' />
   </node>
+  <node id='-134207' action='modify' visible='true' lat='52.26431716822' lon='21.05156753345'>
+    <tag k='name' v='Warszawa Targówek' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='263452' />
+    <tag k='ref:ibnr' v='6581' />
+  </node>
+  <node id='-134279' action='modify' visible='true' lat='52.04922785545' lon='19.19323861063'>
+    <tag k='name' v='Łęczyca' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='32524' />
+    <tag k='ref:ibnr' v='1254' />
+  </node>
+  <node id='-134340' action='modify' visible='true' lat='51.97250907933' lon='19.26593183935'>
+    <tag k='name' v='Ozorków' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='32540' />
+    <tag k='ref:ibnr' v='1333' />
+  </node>
+  <node id='-134343' action='modify' visible='true' lat='50.71393866495' lon='18.65755051106'>
+    <tag k='name' v='Kochcice-Glinica' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='71431' />
+    <tag k='ref:ibnr' v='4166' />
+  </node>
+  <node id='-134350' action='modify' visible='true' lat='51.05461521533' lon='17.06879875463'>
+    <tag k='name' v='Iwiny' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='263500' />
+    <tag k='ref:ibnr' v='6574' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
@@ -26789,6 +26820,7 @@
     <nd ref='-114473' />
     <nd ref='-118018' />
     <nd ref='-116452' />
+    <nd ref='-134207' />
     <nd ref='-117695' />
     <nd ref='-116127' />
     <nd ref='-114561' />
