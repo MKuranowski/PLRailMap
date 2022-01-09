@@ -1313,7 +1313,7 @@
   <node id='-109537' action='modify' visible='true' version='1' lat='52.22223604539' lon='20.96142072884'>
     <tag k='gtfs:location_type' v='0' />
     <tag k='gtfs:parent_station' v='33506P' />
-    <tag k='name' v='Warszawa Zachodnia (Peron 8)' />
+    <tag k='name' v='Warszawa Zachodnia (Peron 9)' />
     <tag k='railway' v='station' />
     <tag k='ref' v='34868' />
     <tag k='ref:ibnr' v='404' />
