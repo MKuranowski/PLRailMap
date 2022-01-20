@@ -150,8 +150,8 @@ def verify_uniq_ibnr(stations: List[Station]) -> bool:
     for invalid_group in filter(lambda stations: len(stations) > 1, stations_by_ibnr.values()):
         # Warszawa Zachodnia is a special group where 3 stations can
         # have the same IBNR code (404)
-        if len(invalid_group) == 3 and {s.pkpplk for s in invalid_group} \
-                == {"33506", "33506P", "34868"}:
+        if len(invalid_group) == 2 and {s.pkpplk for s in invalid_group} \
+                == {"33506", "34868"}:
             continue
 
         if ok:

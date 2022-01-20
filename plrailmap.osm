@@ -1303,26 +1303,15 @@
     <tag k='ref:ibnr' v='403' />
   </node>
   <node id='-109536' action='modify' visible='true' version='1' lat='52.21977158286' lon='20.96535881216'>
-    <tag k='gtfs:location_type' v='0' />
-    <tag k='gtfs:parent_station' v='33506P' />
     <tag k='name' v='Warszawa Zachodnia' />
     <tag k='railway' v='station' />
     <tag k='ref' v='33506' />
     <tag k='ref:ibnr' v='404' />
   </node>
   <node id='-109537' action='modify' visible='true' version='1' lat='52.22223604539' lon='20.96142072884'>
-    <tag k='gtfs:location_type' v='0' />
-    <tag k='gtfs:parent_station' v='33506P' />
     <tag k='name' v='Warszawa Zachodnia (Peron 9)' />
     <tag k='railway' v='station' />
     <tag k='ref' v='34868' />
-    <tag k='ref:ibnr' v='404' />
-  </node>
-  <node id='-109538' action='modify' visible='true' version='1' lat='52.21966313064' lon='20.96541245634'>
-    <tag k='gtfs:location_type' v='1' />
-    <tag k='name' v='Warszawa Zachodnia' />
-    <tag k='railway' v='station' />
-    <tag k='ref' v='33506P' />
     <tag k='ref:ibnr' v='404' />
   </node>
   <node id='-109539' action='modify' visible='true' version='1' lat='54.07262720034' lon='21.38515338756'>

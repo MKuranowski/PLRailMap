@@ -33,4 +33,3 @@ These tags are always required
 
 If the station name is not in Polish, `name:pl` should also be present.
 
-In order to merge Warszawa Zachodnia with its platform 8, there are 2 additional tags: `gtfs:location_type` and `gtfs:parent_station`. If one uses both 33506 and 34868 stations, the parent (33506P) should also be provided.
