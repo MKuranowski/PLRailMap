@@ -1816,6 +1816,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='178633' />
     <tag k='ref:ibnr' v='1075' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109626' action='modify' visible='true' version='1' lat='51.99684579892' lon='23.3558781676'>
     <tag k='name' v='Chotyłów' />
@@ -2172,6 +2173,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36541' />
     <tag k='ref:ibnr' v='1167' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109685' action='modify' visible='true' version='1' lat='51.46153361821' lon='19.69314687797'>
     <tag k='name' v='Jarosty' />
@@ -2338,6 +2340,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36517' />
     <tag k='ref:ibnr' v='1234' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109719' action='modify' visible='true' version='1' lat='51.76687905341' lon='21.63310049207'>
     <tag k='name' v='Leokadia' />
@@ -2535,11 +2538,12 @@
     <tag k='ref' v='40873' />
     <tag k='ref:ibnr' v='1283' />
   </node>
-  <node id='-109753' action='modify' visible='true' version='1' lat='52.44370149354' lon='20.70435310052'>
+  <node id='-109753' action='modify' visible='true' version='1' lat='52.44367451743' lon='20.70438260482'>
     <tag k='name' v='Modlin' />
     <tag k='railway' v='station' />
     <tag k='ref' v='36467' />
     <tag k='ref:ibnr' v='1284' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109754' action='modify' visible='true' version='1' lat='52.457494' lon='21.50001791534'>
     <tag k='name' v='Mokra Wieś' />
@@ -2645,6 +2649,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36459' />
     <tag k='ref:ibnr' v='1309' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109771' action='modify' visible='true' version='1' lat='52.47256037859' lon='23.17662271891'>
     <tag k='name' v='Nowy Nurzec' />
@@ -24134,6 +24139,82 @@
     <tag k='ref:mother' v='263452' />
     <tag k='wheelchair' v='yes' />
   </node>
+  <node id='-139069' action='modify' visible='true' lat='52.41131309215' lon='20.91349884566'>
+    <tag k='direction' v='SE' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36517' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139070' action='modify' visible='true' lat='52.41120797109' lon='20.91516449813'>
+    <tag k='direction' v='W' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36517' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139071' action='modify' visible='true' lat='52.4113723463' lon='20.91350412386' />
+  <node id='-139072' action='modify' visible='true' lat='52.41112550329' lon='20.91512129052' />
+  <node id='-139134' action='modify' visible='true' lat='52.4157066653' lon='20.88404819202'>
+    <tag k='direction' v='E' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='178633' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139135' action='modify' visible='true' lat='52.41562282215' lon='20.88572055001'>
+    <tag k='direction' v='W' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='178633' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139136' action='modify' visible='true' lat='52.41578707585' lon='20.88409263008' />
+  <node id='-139137' action='modify' visible='true' lat='52.41554591448' lon='20.8857006748' />
+  <node id='-139167' action='modify' visible='true' lat='52.42538349927' lon='20.77906586129'>
+    <tag k='direction' v='W' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36541' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139168' action='modify' visible='true' lat='52.42521462414' lon='20.77788300645'>
+    <tag k='direction' v='E' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36541' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139169' action='modify' visible='true' lat='52.42533202833' lon='20.77907314965' />
+  <node id='-139170' action='modify' visible='true' lat='52.42527221482' lon='20.77786806342' />
+  <node id='-139192' action='modify' visible='true' lat='52.42536141913' lon='20.72382643651'>
+    <tag k='direction' v='NW' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36459' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139193' action='modify' visible='true' lat='52.42524161115' lon='20.72380766172'>
+    <tag k='direction' v='E' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36459' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139227' action='modify' visible='true' lat='52.44372247534' lon='20.70432543587'>
+    <tag k='direction' v='SE;T' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36467' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139228' action='modify' visible='true' lat='52.44362478867' lon='20.70444479484'>
+    <tag k='direction' v='N' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36467' />
+    <tag k='wheelchair' v='yes' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
@@ -27406,7 +27487,9 @@
     <nd ref='-114871' />
     <nd ref='-118417' />
     <nd ref='-115550' />
+    <nd ref='-139170' />
     <nd ref='-109684' />
+    <nd ref='-139169' />
     <nd ref='-117533' />
     <nd ref='-115967' />
     <nd ref='-116699' />
@@ -27417,10 +27500,14 @@
     <nd ref='-116792' />
     <nd ref='-115227' />
     <nd ref='-118774' />
+    <nd ref='-139136' />
     <nd ref='-109625' />
+    <nd ref='-139137' />
     <nd ref='-117944' />
     <nd ref='-116378' />
+    <nd ref='-139071' />
     <nd ref='-109718' />
+    <nd ref='-139072' />
     <nd ref='-115048' />
     <nd ref='-118594' />
     <nd ref='-117026' />
