@@ -24120,6 +24120,20 @@
     <tag k='ref:mother' v='33472' />
     <tag k='wheelchair' v='yes' />
   </node>
+  <node id='-139021' action='modify' visible='true' lat='52.26436306405' lon='21.05160444841'>
+    <tag k='direction' v='NW' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='263452' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139022' action='modify' visible='true' lat='52.26423584273' lon='21.05152398214'>
+    <tag k='direction' v='S' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='263452' />
+    <tag k='wheelchair' v='yes' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
