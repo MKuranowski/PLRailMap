@@ -3166,6 +3166,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='38919' />
     <tag k='ref:ibnr' v='1458' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109867' action='modify' visible='true' version='1' lat='52.12112611213' lon='21.25151981349'>
     <tag k='name' v='Świder' />
@@ -24349,6 +24350,22 @@
   </node>
   <node id='-139533' action='modify' visible='true' lat='52.27700284589' lon='21.17078015071' />
   <node id='-139534' action='modify' visible='true' lat='52.27750576263' lon='21.17019256252' />
+  <node id='-139558' action='modify' visible='true' lat='52.10129621729' lon='21.29394270346'>
+    <tag k='direction' v='NW' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='38919' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139559' action='modify' visible='true' lat='52.10115122884' lon='21.29478357598'>
+    <tag k='direction' v='SE' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='38919' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139560' action='modify' visible='true' lat='52.10124821423' lon='21.29394278242' />
+  <node id='-139561' action='modify' visible='true' lat='52.10120110297' lon='21.29479352179' />
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
@@ -29756,7 +29773,9 @@
     <nd ref='-115802' />
     <nd ref='-117368' />
     <nd ref='-113817' />
+    <nd ref='-139561' />
     <nd ref='-109866' />
+    <nd ref='-139560' />
     <nd ref='-115388' />
     <nd ref='-114648' />
     <nd ref='-116214' />
