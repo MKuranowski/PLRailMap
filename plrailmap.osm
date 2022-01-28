@@ -14223,7 +14223,7 @@
     <tag k='ref:ibnr' v='40' />
   </node>
   <node id='-115002' action='modify' visible='true' lat='51.87878267043' lon='20.45139310598' />
-  <node id='-115003' action='modify' visible='true' lat='51.7888292178' lon='21.17477415919' />
+  <node id='-115003' action='modify' visible='true' lat='51.78883585425' lon='21.17482243895' />
   <node id='-115005' action='modify' visible='true' lat='52.32975979498' lon='22.8912913692' />
   <node id='-115008' action='modify' visible='true' lat='50.56351077357' lon='19.90704412937' />
   <node id='-115009' action='modify' visible='true' lat='52.14972850461' lon='21.68000041902' />
@@ -22235,6 +22235,15 @@
     <tag k='ref' v='263500' />
     <tag k='ref:ibnr' v='6574' />
   </node>
+  <node id='-134372' action='modify' visible='true' lat='51.78624756311' lon='21.17632448137' />
+  <node id='-134385' action='modify' visible='true' lat='51.78803615221' lon='21.17545008123' />
+  <node id='-134390' action='modify' visible='true' lat='51.78068461651' lon='21.17769028471'>
+    <tag k='name' v='Warka Miasto' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='265204' />
+    <tag k='ref:ibnr' v='6580' />
+  </node>
+  <node id='-134453' action='modify' visible='true' lat='51.77938422722' lon='21.17841570688' />
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
@@ -24513,10 +24522,14 @@
     <nd ref='-110133' />
     <nd ref='-114264' />
     <nd ref='-115003' />
+    <nd ref='-134385' />
     <nd ref='-118550' />
+    <nd ref='-134372' />
     <nd ref='-116982' />
     <nd ref='-115417' />
     <nd ref='-117666' />
+    <nd ref='-134390' />
+    <nd ref='-134453' />
     <nd ref='-116099' />
     <nd ref='-114533' />
     <nd ref='-118078' />
