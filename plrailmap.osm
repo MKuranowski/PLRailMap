@@ -3269,6 +3269,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='258646' />
     <tag k='ref:ibnr' v='1480' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109882' action='modify' visible='true' version='1' lat='52.24619343106' lon='20.95901317791'>
     <tag k='name' v='Warszawa Koło' />
@@ -13292,6 +13293,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36236' />
     <tag k='ref:ibnr' v='1556' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-113941' action='modify' visible='true' lat='52.57717145697' lon='19.7349428916' />
   <node id='-113942' action='modify' visible='true' lat='54.53741179438' lon='18.48871349216' />
@@ -24315,6 +24317,38 @@
     <tag k='ref:mother' v='36368' />
     <tag k='wheelchair' v='yes' />
   </node>
+  <node id='-139497' action='modify' visible='true' lat='52.29125109639' lon='21.15436054632'>
+    <tag k='direction' v='N' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36236' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139498' action='modify' visible='true' lat='52.29166205661' lon='21.15365378425'>
+    <tag k='direction' v='SE' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36236' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139499' action='modify' visible='true' lat='52.29171276762' lon='21.15372273552' />
+  <node id='-139500' action='modify' visible='true' lat='52.29121750333' lon='21.15429751882' />
+  <node id='-139531' action='modify' visible='true' lat='52.27705914621' lon='21.17083601519'>
+    <tag k='direction' v='NW' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='258646' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139532' action='modify' visible='true' lat='52.27747023808' lon='21.17012925312'>
+    <tag k='direction' v='S' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='258646' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139533' action='modify' visible='true' lat='52.27700284589' lon='21.17078015071' />
+  <node id='-139534' action='modify' visible='true' lat='52.27750576263' lon='21.17019256252' />
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
@@ -29455,7 +29489,9 @@
     <nd ref='-116336' />
     <nd ref='-114772' />
     <nd ref='-115506' />
+    <nd ref='-139499' />
     <nd ref='-113940' />
+    <nd ref='-139500' />
     <nd ref='-117490' />
     <nd ref='-115924' />
     <nd ref='-117164' />
@@ -29465,7 +29501,9 @@
     <nd ref='-118317' />
     <nd ref='-116750' />
     <nd ref='-115185' />
+    <nd ref='-139534' />
     <nd ref='-109881' />
+    <nd ref='-139533' />
     <nd ref='-115865' />
     <nd ref='-114298' />
     <nd ref='-117845' />
