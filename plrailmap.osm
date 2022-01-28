@@ -2269,6 +2269,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36335' />
     <tag k='ref:ibnr' v='1204' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109704' action='modify' visible='true' version='1' lat='51.61481795902' lon='19.19568764724'>
     <tag k='name' v='Kolumna' />
@@ -2701,6 +2702,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36327' />
     <tag k='ref:ibnr' v='1325' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109779' action='modify' visible='true' version='1' lat='53.71963009642' lon='23.24394815031'>
     <tag k='name' v='Ostrowie Biebrzańskie' />
@@ -3522,6 +3524,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36350' />
     <tag k='ref:ibnr' v='1530' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109923' action='modify' visible='true' version='1' lat='53.8599125494' lon='22.24857765272'>
     <tag k='name' v='Woszczele' />
@@ -3570,6 +3573,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36368' />
     <tag k='ref:ibnr' v='1541' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-109931' action='modify' visible='true' version='1' lat='53.10138172476' lon='23.35805805637'>
     <tag k='name' v='Zajezierce' />
@@ -15556,6 +15560,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='36343' />
     <tag k='ref:ibnr' v='1529' />
+    <tag k='wheelchair' v='yes' />
   </node>
   <node id='-116254' action='modify' visible='true' lat='52.57896436736' lon='20.61793683887' />
   <node id='-116255' action='modify' visible='true' lat='54.03726606386' lon='19.04022929907' />
@@ -24259,6 +24264,57 @@
     <tag k='ref:mother' v='36228' />
     <tag k='wheelchair' v='yes' />
   </node>
+  <node id='-139379' action='modify' visible='true' lat='52.32726658579' lon='21.19324385986'>
+    <tag k='direction' v='*' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36327' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139400' action='modify' visible='true' lat='52.33688005322' lon='21.21544450454'>
+    <tag k='direction' v='*' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36335' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139419' action='modify' visible='true' lat='52.34665774168' lon='21.23809710011'>
+    <tag k='direction' v='NE' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36343' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139443' action='modify' visible='true' lat='52.34674949841' lon='21.2379455553'>
+    <tag k='direction' v='SW' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36343' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139461' action='modify' visible='true' lat='52.35438921592' lon='21.25588953361'>
+    <tag k='direction' v='*' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36350' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139468' action='modify' visible='true' lat='52.36449429003' lon='21.27986043423'>
+    <tag k='direction' v='NE' />
+    <tag k='name' v='1' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36368' />
+    <tag k='wheelchair' v='yes' />
+  </node>
+  <node id='-139469' action='modify' visible='true' lat='52.36455118036' lon='21.27981725766' />
+  <node id='-139470' action='modify' visible='true' lat='52.36513759332' lon='21.28118557605' />
+  <node id='-139490' action='modify' visible='true' lat='52.3651879147' lon='21.28114521369'>
+    <tag k='direction' v='SW' />
+    <tag k='name' v='2' />
+    <tag k='public_transport' v='platform' />
+    <tag k='ref:mother' v='36368' />
+    <tag k='wheelchair' v='yes' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
@@ -26567,7 +26623,9 @@
     <nd ref='-118439' />
     <nd ref='-114892' />
     <nd ref='-117585' />
+    <nd ref='-139470' />
     <nd ref='-109930' />
+    <nd ref='-139469' />
     <nd ref='-114452' />
     <nd ref='-117997' />
     <nd ref='-118737' />
