@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
-from collections import defaultdict
-from typing import Dict, List, Mapping, NamedTuple, Optional
+# cSpell: words ztmw
+import re
+import sys
+from collections import Counter, defaultdict
+from itertools import chain
+from typing import (Callable, Dict, Iterable, List, Mapping, NamedTuple,
+                    Optional, TypeVar)
 from xml.sax import parse as sax_parse
 from xml.sax.handler import ContentHandler as SAXContentHandler
-import sys
+
+K = TypeVar("K")
+V = TypeVar("V")
 
 ID_WIDTH = 8
 IBNR_WIDTH = 4
 PKPPLK_WIDTH = 6
+
+HEADING_HINTS = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"}
+VALID_HINTS = {"*", "T"} | HEADING_HINTS
 
 FIELDS = [
     "node".ljust(ID_WIDTH),
@@ -31,10 +41,11 @@ class Color:
 
 
 class Station(NamedTuple):
-    name: str
     id: str
+    name: str
     pkpplk: str
-    ibnr: Optional[str] = None
+    ibnr: Optional[str]
+    other_tags: Dict[str, str]
 
     def print(self, which_col_blue: Optional[int] = None) -> None:
         fields = [
@@ -50,11 +61,19 @@ class Station(NamedTuple):
         print("\t".join(fields))
 
 
-class OSMStationLoader(SAXContentHandler):
+class Platform(NamedTuple):
+    id: str
+    name: str
+    mother: str
+    other_tags: Dict[str, str]
+
+
+class OSMLoader(SAXContentHandler):
     def __init__(self) -> None:
         super().__init__()
         self.tags: Dict[str, str] = {}
         self.stations: List[Station] = []
+        self.platforms: Dict[str, List[Platform]] = {}
         self.in_node: bool = False
 
     def startElement(self, name: str, attrs: Mapping[str, str]):
@@ -67,21 +86,44 @@ class OSMStationLoader(SAXContentHandler):
             self.tags[attrs["k"]] = attrs["v"]
 
     def endElement(self, name: str):
-        if name == "node" and self.tags.get("railway") == "station":
+        if name == "node":
             self.in_node = False
-            self.stations.append(Station(
-                name=self.tags["name"],
-                id=self.tags["_id"],
-                pkpplk=self.tags["ref"],
-                ibnr=self.tags.get("ref:ibnr"),
-            ))
+
+            if self.tags.get("railway") == "station":
+                self.stations.append(Station(
+                    id=self.tags["_id"],
+                    name=self.tags["name"],
+                    pkpplk=self.tags["ref"],
+                    ibnr=self.tags.get("ref:ibnr"),
+                    other_tags=self.tags,
+                ))
+
+            elif self.tags.get("public_transport") == "platform":
+                mother = self.tags["ref:mother"]
+                self.platforms.setdefault(mother, []).append(Platform(
+                    id=self.tags["_id"],
+                    name=self.tags["name"],
+                    mother=mother,
+                    other_tags=self.tags,
+                ))
 
     @classmethod
-    def load_all(cls, path: str) -> List[Station]:
+    def load_all(cls, path: str) -> "OSMLoader":
+        handler = cls()
         with open(path, "rb") as stream:
-            handler = cls()
             sax_parse(stream, handler)
-            return handler.stations
+        return handler
+
+
+def group_by(iterable: Iterable[V], key: Callable[[V], K]) -> Dict[K, List[V]]:
+    grouped: Dict[K, List[V]] = {}
+    for i in iterable:
+        grouped.setdefault(key(i), []).append(i)
+    return grouped
+
+
+def osm_list(value: str) -> List[str]:
+    return value.split(";") if value else []
 
 
 def verify_uniq_pkpplk(stations: List[Station]) -> bool:
@@ -148,7 +190,7 @@ def verify_uniq_ibnr(stations: List[Station]) -> bool:
             stations_by_ibnr[station.ibnr].append(station)
 
     for invalid_group in filter(lambda stations: len(stations) > 1, stations_by_ibnr.values()):
-        # Warszawa Zachodnia is a special group where 3 stations can
+        # Warszawa Zachodnia is a special group where 2 stations can
         # have the same IBNR code (404)
         if len(invalid_group) == 2 and {s.pkpplk for s in invalid_group} \
                 == {"33506", "34868"}:
@@ -168,10 +210,133 @@ def verify_uniq_ibnr(stations: List[Station]) -> bool:
     return ok
 
 
+def verify_other_attributes(stations: List[Station]) -> bool:
+    ok: bool = True
+
+    print(f"{Color.dim}Checking optional attributes{Color.reset}")
+
+    for station in stations:
+        issues: List[str] = []
+
+        wheelchair_value = station.other_tags.get("wheelchair")
+        if wheelchair_value not in (None, "yes", "no"):
+            issues.append("Invalid wheelchair value: "
+                          f"{Color.yellow}{wheelchair_value}{Color.reset}")
+
+        ref_ztmw = station.other_tags.get("ref:ztmw")
+        if ref_ztmw is not None and not re.fullmatch(r"[0-9]9[0-9][0-9]", ref_ztmw):
+            issues.append("Invalid ref:ztmw value: "
+                          f"{Color.yellow}{ref_ztmw}{Color.reset}")
+
+        if issues:
+            ok = False
+            print(f"Issues in {Color.blue}{station.pkpplk}{Color.reset} ({station.name}):")
+            for issue in issues:
+                print("    " + issue)
+
+    if ok:
+        print(f"{Color.on_prev_line}✅ {Color.green}Optional attributes are OK{Color.reset}")
+
+    return ok
+
+
+def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, List[Platform]]) \
+        -> bool:
+    ok: bool = True
+    print(f"{Color.dim}Checking platforms{Color.reset}")
+
+    for mother_id, platforms in all_platforms.items():
+        issues: List[str] = []
+
+        # Validate the reference
+        if mother_id not in stations_map:
+            ok = False
+            print(f"Invalid reference to mother {Color.blue}{mother_id}{Color.reset} "
+                  "from platforms:", ", ".join(sorted(i.id for i in platforms)))
+            continue
+
+        # Validate unique names
+        platforms_by_name = group_by(platforms, key=lambda i: i.name)
+        for duplicates in filter(lambda i: len(i) > 1, platforms_by_name.values()):
+            name = duplicates[0].name
+            issues.append(f"Platform name {Color.yellow}{name}{Color.reset} reused by nodes: " +
+                          ", ".join(sorted(i.id for i in duplicates)))
+
+        # Validate direction hints
+        direction_hints = Counter(chain.from_iterable(
+            osm_list(i.other_tags.get("direction", "")) for i in platforms
+        ))
+        if direction_hints:
+            # Check if only valid values are used, and check rules 1 and 3
+            wildcard_used = direction_hints["*"] > 0
+            for hint, count in direction_hints.items():
+                if hint not in VALID_HINTS:
+                    issues.append("Invalid direction hint used: "
+                                  f"{Color.yellow}{hint}{Color.reset}")
+
+                elif wildcard_used and hint in HEADING_HINTS:
+                    issues.append(f"Station uses both the {Color.yellow}*{Color.reset} and "
+                                  f"{Color.yellow}{hint}{Color.reset} hints")
+
+                elif count > 1:
+                    issues.append(f"Hint {Color.blue}{hint}{Color.reset} used "
+                                  f"{Color.yellow}{count}{Color.reset} times")
+
+            used_heading_hints = {i for i in direction_hints if i in HEADING_HINTS}
+
+            # Check rule 4
+            if "T" in direction_hints and not wildcard_used and not used_heading_hints:
+                issues.append(f"Only the {Color.blue}T{Color.reset} is present")
+
+            # Check rule 2
+            if not wildcard_used and len(used_heading_hints) < 2:
+                issues.append("Only one heading hint is used")
+
+        # Validate other attributes
+        for platform in platforms:
+            # Validate ref:ztmw
+            ztmw_refs = osm_list(platform.other_tags.get("ref:ztmw", ""))
+            for ztmw_ref in ztmw_refs:
+                match = re.fullmatch(r"[0-9]9[0-9]{4}", ztmw_ref)
+                if not match:
+                    issues.append(
+                        f"Platform {Color.blue}{platform.name}{Color.reset}: "
+                        "invalid ZTM Warszawa code: "
+                        f"{Color.yellow}{ztmw_ref}{Color.reset}"
+                    )
+
+            # Validate wheelchair
+            wheelchair_value = platform.other_tags.get("wheelchair")
+            if wheelchair_value not in (None, "yes", "no"):
+                issues.append(
+                        f"Platform {Color.blue}{platform.name}{Color.reset}: "
+                        "invalid wheelchair value: "
+                        f"{Color.yellow}{wheelchair_value}{Color.reset}"
+                    )
+
+        # Print the collected issues
+        if issues:
+            ok = False
+            station = stations_map[mother_id]
+            print(f"Issues in {Color.blue}{station.pkpplk}{Color.reset} ({station.name}):")
+            for issue in issues:
+                print("    " + issue)
+
+    if ok:
+        print(f"{Color.on_prev_line}✅ {Color.green}Platforms are OK{Color.reset}")
+
+    return ok
+
+
 if __name__ == "__main__":
-    stations = OSMStationLoader.load_all("plrailmap.osm")
+    data = OSMLoader.load_all("plrailmap.osm")
     ok = True
-    ok = verify_uniq_pkpplk(stations) and ok
-    ok = verify_uniq_names(stations) and ok
-    ok = verify_uniq_ibnr(stations) and ok
+    ok = verify_uniq_pkpplk(data.stations) and ok
+    ok = verify_uniq_names(data.stations) and ok
+    ok = verify_uniq_ibnr(data.stations) and ok
+    ok = verify_other_attributes(data.stations) and ok
+
+    stations_map: Dict[str, Station] = {i.pkpplk: i for i in data.stations}
+
+    ok = verify_platforms(stations_map, data.platforms) and ok
     sys.exit(0 if ok else 1)
