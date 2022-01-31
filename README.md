@@ -90,7 +90,7 @@ if station.has_platform_with_hint("T") and (train.terminates_at(station) or trai
     return station.platform_with_hint("T")
 
 if station.has_platform_with_hint("*"):
-    return station.platform_with_hint("T")
+    return station.platform_with_hint("*")
 
 # Bearing calculation
 if train.terminates_at(station):
