@@ -64,7 +64,7 @@ class Station(NamedTuple):
 class Platform(NamedTuple):
     id: str
     name: str
-    mother: str
+    station: str
     other_tags: Dict[str, str]
 
 
@@ -99,11 +99,11 @@ class OSMLoader(SAXContentHandler):
                 ))
 
             elif self.tags.get("public_transport") == "platform":
-                mother = self.tags["ref:mother"]
-                self.platforms.setdefault(mother, []).append(Platform(
+                station = self.tags["ref:station"]
+                self.platforms.setdefault(station, []).append(Platform(
                     id=self.tags["_id"],
                     name=self.tags["name"],
-                    mother=mother,
+                    station=station,
                     other_tags=self.tags,
                 ))
 
@@ -245,13 +245,13 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
     ok: bool = True
     print(f"{Color.dim}Checking platforms{Color.reset}")
 
-    for mother_id, platforms in all_platforms.items():
+    for station_id, platforms in all_platforms.items():
         issues: List[str] = []
 
         # Validate the reference
-        if mother_id not in stations_map:
+        if station_id not in stations_map:
             ok = False
-            print(f"Invalid reference to mother {Color.blue}{mother_id}{Color.reset} "
+            print(f"Invalid reference to station {Color.blue}{station_id}{Color.reset} "
                   "from platforms:", ", ".join(sorted(i.id for i in platforms)))
             continue
 
@@ -317,7 +317,7 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
         # Print the collected issues
         if issues:
             ok = False
-            station = stations_map[mother_id]
+            station = stations_map[station_id]
             print(f"Issues in {Color.blue}{station.pkpplk}{Color.reset} ({station.name}):")
             for issue in issues:
                 print("    " + issue)
