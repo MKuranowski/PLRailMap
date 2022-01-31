@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # cSpell: words ztmw
+import math
 import re
 import sys
 from collections import Counter, defaultdict
 from itertools import chain
 from typing import (Callable, Dict, Iterable, List, Mapping, NamedTuple,
-                    Optional, TypeVar)
+                    Optional, Tuple, TypeVar)
 from xml.sax import parse as sax_parse
 from xml.sax.handler import ContentHandler as SAXContentHandler
 
@@ -45,6 +46,7 @@ class Station(NamedTuple):
     name: str
     pkpplk: str
     ibnr: Optional[str]
+    position: Tuple[float, float]
     other_tags: Dict[str, str]
 
     def print(self, which_col_blue: Optional[int] = None) -> None:
@@ -65,6 +67,7 @@ class Platform(NamedTuple):
     id: str
     name: str
     station: str
+    position: Tuple[float, float]
     other_tags: Dict[str, str]
 
 
@@ -72,6 +75,7 @@ class OSMLoader(SAXContentHandler):
     def __init__(self) -> None:
         super().__init__()
         self.tags: Dict[str, str] = {}
+        self.position: Tuple[float, float] = math.nan, math.nan
         self.stations: List[Station] = []
         self.platforms: Dict[str, List[Platform]] = {}
         self.in_node: bool = False
@@ -79,6 +83,7 @@ class OSMLoader(SAXContentHandler):
     def startElement(self, name: str, attrs: Mapping[str, str]):
         if name == "node":
             self.tags = {"_id": attrs["id"]}
+            self.position = (float(attrs["lat"]), float(attrs["lon"]))
             self.in_node = True
         elif name == "tag" and self.in_node:
             if attrs["k"].startswith("_"):
@@ -95,6 +100,7 @@ class OSMLoader(SAXContentHandler):
                     name=self.tags["name"],
                     pkpplk=self.tags["ref"],
                     ibnr=self.tags.get("ref:ibnr"),
+                    position=self.position,
                     other_tags=self.tags,
                 ))
 
@@ -104,6 +110,7 @@ class OSMLoader(SAXContentHandler):
                     id=self.tags["_id"],
                     name=self.tags["name"],
                     station=station,
+                    position=self.position,
                     other_tags=self.tags,
                 ))
 
@@ -124,6 +131,28 @@ def group_by(iterable: Iterable[V], key: Callable[[V], K]) -> Dict[K, List[V]]:
 
 def osm_list(value: str) -> List[str]:
     return value.split(";") if value else []
+
+
+def distance(n1: Tuple[float, float], n2: Tuple[float, float]) -> float:
+    """Calculates the distance between two positions (in meters) using the haversine formula.
+
+    The radius used for calculations is taken from the WGS 84 ellipsoid
+    at the center of Poland.
+
+    Radius by latitude calculator: https://planetcalc.com/7721/
+    Center of Poland: https://pl.wikipedia.org/wiki/Geometryczny_%C5%9Brodek_Polski
+    """
+    lat1, lon1 = map(math.radians, n1)
+    lat2, lon2 = map(math.radians, n2)
+    delta_lat_half = (lat2 - lat1) * 0.5
+    delta_lon_half = (lon2 - lon1) * 0.5
+
+    sqrt_h = math.sqrt(
+        (math.sin(delta_lat_half) ** 2)
+        + (math.cos(lat1) * math.cos(lat2) * (math.sin(delta_lon_half) ** 2))
+    )
+
+    return math.asin(sqrt_h) * 2.0 * 6364858.7
 
 
 def verify_uniq_pkpplk(stations: List[Station]) -> bool:
@@ -249,7 +278,8 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
         issues: List[str] = []
 
         # Validate the reference
-        if station_id not in stations_map:
+        station = stations_map.get(station_id)
+        if station is None:
             ok = False
             print(f"Invalid reference to station {Color.blue}{station_id}{Color.reset} "
                   "from platforms:", ", ".join(sorted(i.id for i in platforms)))
@@ -294,6 +324,15 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
 
         # Validate other attributes
         for platform in platforms:
+            # Ensure the platform isn't too far away
+            distance_from_station = distance(platform.position, station.position)
+            if distance_from_station > 100.0 or math.isnan(distance_from_station):
+                issues.append(
+                        f"Platform {Color.blue}{platform.name}{Color.reset}: "
+                        f"is {Color.yellow}{distance_from_station:.2f} m{Color.reset}"
+                        " away from the station node"
+                    )
+
             # Validate ref:ztmw
             ztmw_refs = osm_list(platform.other_tags.get("ref:ztmw", ""))
             for ztmw_ref in ztmw_refs:
