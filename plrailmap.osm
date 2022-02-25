@@ -24366,6 +24366,48 @@
   </node>
   <node id='-139560' action='modify' visible='true' lat='52.10124821423' lon='21.29394278242' />
   <node id='-139561' action='modify' visible='true' lat='52.10120110297' lon='21.29479352179' />
+  <node id='-139564' action='modify' visible='true' lat='51.07323516719' lon='17.27632552117'>
+    <tag k='name' v='Chrząstawa Mała' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='263510' />
+    <tag k='ref:ibnr' v='6573' />
+  </node>
+  <node id='-139572' action='modify' visible='true' lat='51.07990343271' lon='17.25201665819'>
+    <tag k='name' v='Nadolice Wielkie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='58214' />
+    <tag k='ref:ibnr' v='6288' />
+  </node>
+  <node id='-139580' action='modify' visible='true' lat='51.08749569107' lon='17.18006371915'>
+    <tag k='name' v='Dobrzykowice Wrocławskie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='58222' />
+    <tag k='ref:ibnr' v='6104' />
+  </node>
+  <node id='-139589' action='modify' visible='true' lat='51.10369878474' lon='17.15744465321'>
+    <tag k='name' v='Wrocław Wojnów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='59287' />
+    <tag k='ref:ibnr' v='6527' />
+  </node>
+  <node id='-139597' action='modify' visible='true' lat='51.11594966807' lon='17.12124556035'>
+    <tag k='name' v='Wrocław Swojczyce' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='59279' />
+    <tag k='ref:ibnr' v='6524' />
+  </node>
+  <node id='-139605' action='modify' visible='true' lat='51.12232389459' lon='17.11443006724'>
+    <tag k='name' v='Wrocław Popiele' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='263506' />
+    <tag k='ref:ibnr' v='6577' />
+  </node>
+  <node id='-139613' action='modify' visible='true' lat='51.13487952433' lon='17.100195584'>
+    <tag k='name' v='Wrocław Kowale' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='59238' />
+    <tag k='ref:ibnr' v='6511' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
