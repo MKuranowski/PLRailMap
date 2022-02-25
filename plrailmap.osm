@@ -24408,6 +24408,24 @@
     <tag k='ref' v='59238' />
     <tag k='ref:ibnr' v='6511' />
   </node>
+  <node id='-139616' action='modify' visible='true' lat='51.08191872085' lon='17.2180437988'>
+    <tag k='name' v='Nadolice Małe' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='263509' />
+    <tag k='ref:ibnr' v='6575' />
+  </node>
+  <node id='-139624' action='modify' visible='true' lat='51.09795532842' lon='17.16841757029'>
+    <tag k='name' v='Wrocław Wojnów Wschodni' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='263508' />
+    <tag k='ref:ibnr' v='6579' />
+  </node>
+  <node id='-139632' action='modify' visible='true' lat='51.10991809259' lon='17.14551955193'>
+    <tag k='name' v='Wrocław Strachocin' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='263507' />
+    <tag k='ref:ibnr' v='6578' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-109457' />
     <nd ref='-114912' />
