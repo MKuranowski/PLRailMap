@@ -1,17 +1,13 @@
-#!/usr/bin/env python3
 # cSpell: words ztmw
 import math
 import re
 import sys
 from collections import Counter, defaultdict
 from itertools import chain
-from typing import (Callable, Dict, Iterable, List, Mapping, NamedTuple,
-                    Optional, Tuple, TypeVar)
-from xml.sax import parse as sax_parse
-from xml.sax.handler import ContentHandler as SAXContentHandler
+from typing import Dict, List, Optional
 
-K = TypeVar("K")
-V = TypeVar("V")
+from .loader import OSMLoader, Platform, Station
+from .util import distance, group_by, osm_list
 
 ID_WIDTH = 8
 IBNR_WIDTH = 4
@@ -41,118 +37,18 @@ class Color:
     on_prev_line = "\x1B[F\x1B[K"
 
 
-class Station(NamedTuple):
-    id: str
-    name: str
-    pkpplk: str
-    ibnr: Optional[str]
-    position: Tuple[float, float]
-    other_tags: Dict[str, str]
+def print_station(station: Station, which_col_blue: Optional[int] = None):
+    fields = [
+        station.id.ljust(ID_WIDTH),
+        station.pkpplk.ljust(PKPPLK_WIDTH),
+        (station.ibnr or "").ljust(IBNR_WIDTH),
+        station.name
+    ]
 
-    def print(self, which_col_blue: Optional[int] = None) -> None:
-        fields = [
-            self.id.ljust(ID_WIDTH),
-            self.pkpplk.ljust(PKPPLK_WIDTH),
-            (self.ibnr or "").ljust(IBNR_WIDTH),
-            self.name
-        ]
+    if which_col_blue is not None:
+        fields[which_col_blue] = Color.blue + fields[which_col_blue] + Color.reset
 
-        if which_col_blue is not None:
-            fields[which_col_blue] = Color.blue + fields[which_col_blue] + Color.reset
-
-        print("\t".join(fields))
-
-
-class Platform(NamedTuple):
-    id: str
-    name: str
-    station: str
-    position: Tuple[float, float]
-    other_tags: Dict[str, str]
-
-
-class OSMLoader(SAXContentHandler):
-    def __init__(self) -> None:
-        super().__init__()
-        self.tags: Dict[str, str] = {}
-        self.position: Tuple[float, float] = math.nan, math.nan
-        self.stations: List[Station] = []
-        self.platforms: Dict[str, List[Platform]] = {}
-        self.in_node: bool = False
-
-    def startElement(self, name: str, attrs: Mapping[str, str]):
-        if name == "node":
-            self.tags = {"_id": attrs["id"]}
-            self.position = (float(attrs["lat"]), float(attrs["lon"]))
-            self.in_node = True
-        elif name == "tag" and self.in_node:
-            if attrs["k"].startswith("_"):
-                raise ValueError("Starting a tag with an underscore messes with processing")
-            self.tags[attrs["k"]] = attrs["v"]
-
-    def endElement(self, name: str):
-        if name == "node":
-            self.in_node = False
-
-            if self.tags.get("railway") == "station":
-                self.stations.append(Station(
-                    id=self.tags["_id"],
-                    name=self.tags["name"],
-                    pkpplk=self.tags["ref"],
-                    ibnr=self.tags.get("ref:ibnr"),
-                    position=self.position,
-                    other_tags=self.tags,
-                ))
-
-            elif self.tags.get("public_transport") == "platform":
-                station = self.tags["ref:station"]
-                self.platforms.setdefault(station, []).append(Platform(
-                    id=self.tags["_id"],
-                    name=self.tags["name"],
-                    station=station,
-                    position=self.position,
-                    other_tags=self.tags,
-                ))
-
-    @classmethod
-    def load_all(cls, path: str) -> "OSMLoader":
-        handler = cls()
-        with open(path, "rb") as stream:
-            sax_parse(stream, handler)
-        return handler
-
-
-def group_by(iterable: Iterable[V], key: Callable[[V], K]) -> Dict[K, List[V]]:
-    grouped: Dict[K, List[V]] = {}
-    for i in iterable:
-        grouped.setdefault(key(i), []).append(i)
-    return grouped
-
-
-def osm_list(value: str) -> List[str]:
-    return value.split(";") if value else []
-
-
-def distance(n1: Tuple[float, float], n2: Tuple[float, float]) -> float:
-    """Calculates the distance between two positions (in meters) using the haversine formula.
-
-    The radius used for calculations is taken from the WGS 84 ellipsoid
-    at the center of Poland.
-
-    Radius by latitude calculator: https://planetcalc.com/7721/
-    Center of Poland: https://pl.wikipedia.org/wiki/Geometryczny_%C5%9Brodek_Polski
-    """
-    lat1, lon1 = map(math.radians, n1)
-    lat2, lon2 = map(math.radians, n2)
-    delta_lat_half = (lat2 - lat1) * 0.5
-    delta_lon_half = (lon2 - lon1) * 0.5
-
-    sqrt_h = math.sqrt(
-        (math.sin(delta_lat_half) ** 2)
-        + (math.cos(lat1) * math.cos(lat2) * (math.sin(delta_lon_half) ** 2))
-    )
-
-    return math.asin(sqrt_h) * 2.0 * 6364858.7
+    print("\t".join(fields))
 
 
 def verify_uniq_pkpplk(stations: List[Station]) -> bool:
@@ -171,7 +67,7 @@ def verify_uniq_pkpplk(stations: List[Station]) -> bool:
             print("\t".join(FIELDS))
 
         for station in invalid_group:
-            station.print(1)
+            print_station(station, 1)
 
     if ok:
         print(f"{Color.on_prev_line}✅ {Color.green}PKP PLK ids are unique{Color.reset}")
@@ -200,7 +96,7 @@ def verify_uniq_names(stations: List[Station]) -> bool:
             print("\t".join(FIELDS))
 
         for station in invalid_group:
-            station.print(3)
+            print_station(station, 3)
 
     if ok:
         print(f"{Color.on_prev_line}✅ {Color.green}Station names are unique{Color.reset}")
@@ -231,7 +127,7 @@ def verify_uniq_ibnr(stations: List[Station]) -> bool:
             print("\t".join(FIELDS))
 
         for station in invalid_group:
-            station.print(2)
+            print_station(station, 2)
 
     if ok:
         print(f"{Color.on_prev_line}✅ {Color.green}IBNR codes are unique{Color.reset}")
@@ -316,7 +212,7 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
 
             # Check rule 4
             if "T" in direction_hints and not wildcard_used and not used_heading_hints:
-                issues.append(f"Only the {Color.blue}T{Color.reset} is present")
+                issues.append(f"Only the {Color.blue}T{Color.reset} hint is present")
 
             # Check rule 2
             if not wildcard_used and len(used_heading_hints) < 2:
