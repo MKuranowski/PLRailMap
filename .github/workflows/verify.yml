@@ -11,4 +11,4 @@ jobs:
       with:
         python-version: "3.9"
     - name: Run verification script
-      run: python verify.py
+      run: python -m scripts.verify
