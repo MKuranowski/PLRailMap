@@ -10,7 +10,7 @@ the following operators:
 - [x] Koleje Mazowieckie
 - [x] PKP Intercity
 - [ ] PKP SKM Trójmiasto
-- [ ] SKM Warszawa (see <https://gist.github.com/MKuranowski/0ca97a012d541899cb1f859cd0bab2e7#file-rail_platforms-json>)
+- [x] SKM Warszawa
 - [ ] Koleje Śląskie
 - [ ] Koleje Dolnośląskie
 - [ ] Koleje Wielkopolskie
