@@ -35190,6 +35190,88 @@
     <tag k='ref' v='19810' />
     <tag k='ref:ibnr' v='5096' />
   </node>
+  <node id='-152374' action='modify' visible='true' lat='49.96642102176' lon='19.77230475215'>
+    <tag k='name' v='Podbory Skawińskie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='80127' />
+    <tag k='ref:ibnr' v='3220' />
+  </node>
+  <node id='-152468' action='modify' visible='true' lat='49.9731279083' lon='19.79360282153'>
+    <tag k='name' v='Skawina Zachodnia' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='80119' />
+    <tag k='ref:ibnr' v='3275' />
+  </node>
+  <node id='-152476' action='modify' visible='true' lat='50.07095272195' lon='19.80129807919'>
+    <tag k='name' v='Kraków Lotnisko' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='235879' />
+  </node>
+  <node id='-152483' action='modify' visible='true' lat='50.07652676054' lon='19.82562035054'>
+    <tag k='name' v='Kraków Olszanica' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='258463' />
+  </node>
+  <node id='-152489' action='modify' visible='true' lat='50.07982130139' lon='19.84899043769'>
+    <tag k='name' v='Kraków Zakliki' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='258461' />
+  </node>
+  <node id='-152495' action='modify' visible='true' lat='50.08170170367' lon='19.85818371043'>
+    <tag k='name' v='Kraków Młynówka' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='258462' />
+  </node>
+  <node id='-152502' action='modify' visible='true' lat='49.985672592' lon='20.05670606822'>
+    <tag k='name' v='Wieliczka Rynek-Kopalnia' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='241960' />
+  </node>
+  <node id='-152508' action='modify' visible='true' lat='49.98929757398' lon='20.04912882775'>
+    <tag k='name' v='Wieliczka Park' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='80440' />
+  </node>
+  <node id='-152515' action='modify' visible='true' lat='49.99837435105' lon='20.03712862462'>
+    <tag k='name' v='Wieliczka Bogucice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='242822' />
+  </node>
+  <node id='-152521' action='modify' visible='true' lat='50.01043326084' lon='20.03536373109'>
+    <tag k='name' v='Kraków Bieżanów Drożdżownia' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='79954' />
+  </node>
+  <node id='-152529' action='modify' visible='true' lat='50.07890560011' lon='19.96084928244'>
+    <tag k='name' v='Kraków Olsza' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='80200' />
+  </node>
+  <node id='-152540' action='modify' visible='true' lat='49.26923970266' lon='20.85066675603'>
+    <tag k='name' v='Plaveč' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='179275' />
+  </node>
+  <node id='-152551' action='modify' visible='true' lat='49.69401278283' lon='21.05998098582'>
+    <tag k='name' v='Wola Łużańska' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='81653' />
+  </node>
+  <node id='-152558' action='modify' visible='true' lat='49.69666558526' lon='21.12335622042'>
+    <tag k='name' v='Moszczenica Małopolska' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='81661' />
+  </node>
+  <node id='-152563' action='modify' visible='true' lat='49.67930033139' lon='21.02352297421'>
+    <tag k='name' v='Szalowa' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='81646' />
+  </node>
+  <node id='-152606' action='modify' visible='true' lat='49.6752481835' lon='20.99466114968'>
+    <tag k='name' v='Polna' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='81638' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-143385' />
     <nd ref='-143384' />

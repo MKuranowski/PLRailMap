@@ -15,7 +15,7 @@ the following operators:
 - [ ] Koleje Dolnośląskie
 - [ ] Koleje Wielkopolskie
 - [ ] Warszawska Kolej Dojazdowa
-- [ ] Koleje Małopolskie
+- [x] Koleje Małopolskie
 - [ ] Łódzka Kolej Aglomeracyjna
 - [ ] Arriva RP
 
