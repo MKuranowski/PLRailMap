@@ -35178,6 +35178,18 @@
     <tag k='ref' v='179213' />
     <tag k='ref:ibnr' v='9945' />
   </node>
+  <node id='-152311' action='modify' visible='true' lat='50.24210437374' lon='19.19863502628'>
+    <tag k='name' v='Sosnowiec Jęzor' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='73684' />
+    <tag k='ref:ibnr' v='4311' />
+  </node>
+  <node id='-152372' action='modify' visible='true' lat='52.98877404353' lon='18.4699276489'>
+    <tag k='name' v='Cierpice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='19810' />
+    <tag k='ref:ibnr' v='5096' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-143385' />
     <nd ref='-143384' />
