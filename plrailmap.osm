@@ -35864,6 +35864,12 @@
   <node id='-153337' action='modify' visible='true' lat='49.89332120291' lon='21.05103849828' />
   <node id='-153338' action='modify' visible='true' lat='49.89287885506' lon='21.05197727144' />
   <node id='-153339' action='modify' visible='true' lat='49.89265076787' lon='21.05309843481' />
+  <node id='-153343' action='modify' visible='true' lat='51.69780921813' lon='19.86982550793'>
+    <tag k='name' v='Mikołajów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='47530' />
+    <tag k='ref:ibnr' v='1277' />
+  </node>
   <way id='-102164' action='modify' visible='true'>
     <nd ref='-143385' />
     <nd ref='-143384' />
