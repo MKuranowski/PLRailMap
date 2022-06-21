@@ -6451,6 +6451,7 @@
     <tag k='name' v='Blachownia' />
     <tag k='railway' v='station' />
     <tag k='ref' v='62844' />
+    <tag k='ref:2' v='265741' />
     <tag k='ref:ibnr' v='4044' />
   </node>
   <node id='-110421' action='modify' visible='true' version='1' lat='50.66577025392' lon='18.90108800169'>
@@ -6499,6 +6500,7 @@
     <tag k='name' v='Częstochowa Gnaszyn' />
     <tag k='railway' v='station' />
     <tag k='ref' v='62836' />
+    <tag k='ref:2' v='265740' />
     <tag k='ref:ibnr' v='4082' />
   </node>
   <node id='-110429' action='modify' visible='true' version='1' lat='50.78767009632' lon='19.15542534637'>
