@@ -1584,7 +1584,6 @@
     <tag k='ref' v='45401' />
     <tag k='ref:2' v='178501' />
     <tag k='ref:ibnr' v='903' />
-    <tag k='ref:polregio' v='178501' />
   </node>
   <node id='-109586' action='modify' visible='true' version='1' lat='50.85132642052' lon='16.00783028651'>
     <tag k='name' v='Marciszów' />
