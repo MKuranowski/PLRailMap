@@ -23523,7 +23523,7 @@
     <tag k='name' v='2' />
     <tag k='public_transport' v='platform' />
     <tag k='ref:station' v='33647' />
-    <tag k='ref:ztmw' v='290102' />
+    <tag k='ref:ztmw' v='290101' />
     <tag k='wheelchair' v='yes' />
   </node>
   <node id='-136534' action='modify' visible='true' lat='52.244790494' lon='21.04409962758'>
@@ -23531,7 +23531,7 @@
     <tag k='name' v='1' />
     <tag k='public_transport' v='platform' />
     <tag k='ref:station' v='33647' />
-    <tag k='ref:ztmw' v='290101' />
+    <tag k='ref:ztmw' v='290102' />
     <tag k='wheelchair' v='yes' />
   </node>
   <node id='-136575' action='modify' visible='true' lat='52.2518312431' lon='21.05162054166'>
