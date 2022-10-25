@@ -39800,6 +39800,74 @@
   <node id='-164876' action='modify' visible='true' lat='51.74500408013' lon='19.43558692396' />
   <node id='-164877' action='modify' visible='true' lat='51.74427003459' lon='19.4361662811' />
   <node id='-164878' action='modify' visible='true' lat='51.74352463203' lon='19.43653423801' />
+  <node id='-164880' action='modify' visible='true' lat='50.43428698193' lon='21.50605568123'>
+    <tag k='name' v='Padew' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='65755' />
+    <tag k='ref:ibnr' v='2175' />
+  </node>
+  <node id='-164888' action='modify' visible='true' lat='50.40124435363' lon='21.46924669444'>
+    <tag k='name' v='Jaślany' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='81562' />
+    <tag k='ref:ibnr' v='3096' />
+  </node>
+  <node id='-164913' action='modify' visible='true' lat='50.37225761358' lon='21.4586001581'>
+    <tag k='name' v='Tuszów Narodowy' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='81554' />
+    <tag k='ref:ibnr' v='3310' />
+  </node>
+  <node id='-191965' action='modify' visible='true' lat='50.34305031831' lon='21.45268320501'>
+    <tag k='name' v='Chorzelów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='81547' />
+    <tag k='ref:ibnr' v='3053' />
+  </node>
+  <node id='-191972' action='modify' visible='true' lat='50.29611129196' lon='21.42896174312' />
+  <node id='-191973' action='modify' visible='true' lat='50.29749573849' lon='21.42880081058' />
+  <node id='-191974' action='modify' visible='true' lat='50.29875678344' lon='21.42899392962' />
+  <node id='-191975' action='modify' visible='true' lat='50.30226560215' lon='21.42964838862' />
+  <node id='-191976' action='modify' visible='true' lat='50.30591806228' lon='21.43033503413' />
+  <node id='-191977' action='modify' visible='true' lat='50.30696646525' lon='21.43061398387' />
+  <node id='-191978' action='modify' visible='true' lat='50.30937838956' lon='21.43172978282' />
+  <node id='-191979' action='modify' visible='true' lat='50.31485272968' lon='21.43424033046' />
+  <node id='-191980' action='modify' visible='true' lat='50.32100461501' lon='21.43707274318' />
+  <node id='-191981' action='modify' visible='true' lat='50.32279933576' lon='21.43799542308' />
+  <node id='-191982' action='modify' visible='true' lat='50.32565567903' lon='21.4400553596' />
+  <node id='-191983' action='modify' visible='true' lat='50.33198423093' lon='21.4446365726' />
+  <node id='-191984' action='modify' visible='true' lat='50.33741488102' lon='21.44858478427' />
+  <node id='-191985' action='modify' visible='true' lat='50.34458403189' lon='21.45367025256' />
+  <node id='-191986' action='modify' visible='true' lat='50.34576166857' lon='21.45411013484' />
+  <node id='-191987' action='modify' visible='true' lat='50.34726790548' lon='21.45439981341' />
+  <node id='-191988' action='modify' visible='true' lat='50.35175210071' lon='21.45532249331' />
+  <node id='-191989' action='modify' visible='true' lat='50.35606474392' lon='21.45620225787' />
+  <node id='-191990' action='modify' visible='true' lat='50.36199912193' lon='21.45744680285' />
+  <node id='-191991' action='modify' visible='true' lat='50.36403183514' lon='21.45781158328' />
+  <node id='-191992' action='modify' visible='true' lat='50.36541430415' lon='21.45755409122' />
+  <node id='-191993' action='modify' visible='true' lat='50.36711838133' lon='21.45707129359' />
+  <node id='-191994' action='modify' visible='true' lat='50.36827492897' lon='21.4569532764' />
+  <node id='-191995' action='modify' visible='true' lat='50.36925352419' lon='21.45716785312' />
+  <node id='-191996' action='modify' visible='true' lat='50.37056741051' lon='21.45784376979' />
+  <node id='-191997' action='modify' visible='true' lat='50.37178546011' lon='21.45843385577' />
+  <node id='-191998' action='modify' visible='true' lat='50.37293505129' lon='21.45871280551' />
+  <node id='-191999' action='modify' visible='true' lat='50.37703366453' lon='21.45909904361' />
+  <node id='-192000' action='modify' visible='true' lat='50.38239075024' lon='21.45956038356' />
+  <node id='-192001' action='modify' visible='true' lat='50.38372479626' lon='21.45990370631' />
+  <node id='-192002' action='modify' visible='true' lat='50.38882803107' lon='21.46166323543' />
+  <node id='-192003' action='modify' visible='true' lat='50.39330830056' lon='21.46325110316' />
+  <node id='-192004' action='modify' visible='true' lat='50.39460784151' lon='21.46392701983' />
+  <node id='-192005' action='modify' visible='true' lat='50.39624247664' lon='21.46516083598' />
+  <node id='-192006' action='modify' visible='true' lat='50.39970306628' lon='21.46803616405' />
+  <node id='-192007' action='modify' visible='true' lat='50.40427120483' lon='21.47183417201' />
+  <node id='-192008' action='modify' visible='true' lat='50.40728675562' lon='21.47429107547' />
+  <node id='-192009' action='modify' visible='true' lat='50.41183365191' lon='21.47806762576' />
+  <node id='-192010' action='modify' visible='true' lat='50.41605196096' lon='21.48154376864' />
+  <node id='-192011' action='modify' visible='true' lat='50.41776789169' lon='21.48305653453' />
+  <node id='-192012' action='modify' visible='true' lat='50.41932653186' lon='21.48500918269' />
+  <node id='-192013' action='modify' visible='true' lat='50.42167123165' lon='21.48835657954' />
+  <node id='-192014' action='modify' visible='true' lat='50.42821253544' lon='21.49748681903' />
+  <node id='-192015' action='modify' visible='true' lat='50.43318113517' lon='21.5044712913' />
   <way id='-103224' action='modify' visible='true'>
     <nd ref='-153087' />
     <nd ref='-153086' />
@@ -59763,6 +59831,54 @@
     <nd ref='-158136' />
     <nd ref='-158137' />
     <nd ref='-138621' />
+    <nd ref='-191972' />
+    <nd ref='-191973' />
+    <nd ref='-191974' />
+    <nd ref='-191975' />
+    <nd ref='-191976' />
+    <nd ref='-191977' />
+    <nd ref='-191978' />
+    <nd ref='-191979' />
+    <nd ref='-191980' />
+    <nd ref='-191981' />
+    <nd ref='-191982' />
+    <nd ref='-191983' />
+    <nd ref='-191984' />
+    <nd ref='-191965' />
+    <nd ref='-191985' />
+    <nd ref='-191986' />
+    <nd ref='-191987' />
+    <nd ref='-191988' />
+    <nd ref='-191989' />
+    <nd ref='-191990' />
+    <nd ref='-191991' />
+    <nd ref='-191992' />
+    <nd ref='-191993' />
+    <nd ref='-191994' />
+    <nd ref='-191995' />
+    <nd ref='-191996' />
+    <nd ref='-191997' />
+    <nd ref='-164913' />
+    <nd ref='-191998' />
+    <nd ref='-191999' />
+    <nd ref='-192000' />
+    <nd ref='-192001' />
+    <nd ref='-192002' />
+    <nd ref='-192003' />
+    <nd ref='-192004' />
+    <nd ref='-192005' />
+    <nd ref='-192006' />
+    <nd ref='-164888' />
+    <nd ref='-192007' />
+    <nd ref='-192008' />
+    <nd ref='-192009' />
+    <nd ref='-192010' />
+    <nd ref='-192011' />
+    <nd ref='-192012' />
+    <nd ref='-192013' />
+    <nd ref='-192014' />
+    <nd ref='-192015' />
+    <nd ref='-164880' />
     <tag k='railway' v='rail' />
   </way>
   <way id='-117471' action='modify' visible='true'>
