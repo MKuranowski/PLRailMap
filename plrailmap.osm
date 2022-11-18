@@ -39882,7 +39882,7 @@
   <node id='-192171' action='modify' visible='true' lat='50.91051905653' lon='15.64554742593'>
     <tag k='name' v='Rybnica' />
     <tag k='railway' v='station' />
-    <tag k='ref' v='55836' />
+    <tag k='ref' v='55863' />
     <tag k='ref:ibnr' v='6395' />
   </node>
   <node id='-192175' action='modify' visible='true' lat='49.65836722274' lon='18.85485112131'>
