@@ -9374,6 +9374,7 @@
     <tag k='name' v='Opole Zachodnie' />
     <tag k='railway' v='station' />
     <tag k='ref' v='178452' />
+    <tag k='ref:2' v='60665' />
     <tag k='ref:ibnr' v='6320' />
   </node>
   <node id='-139255' action='modify' visible='true' version='1' lat='51.39388268918' lon='16.50825902809'>
@@ -22791,9 +22792,19 @@
   <node id='-148872' action='modify' visible='true' lat='52.8110435525' lon='22.37373231769' />
   <node id='-148873' action='modify' visible='true' lat='52.81556336076' lon='22.38634942889' />
   <node id='-148874' action='modify' visible='true' lat='52.82017347007' lon='22.39937423587' />
-  <node id='-148875' action='modify' visible='true' lat='52.82800499593' lon='22.42147563815' />
+  <node id='-148875' action='modify' visible='true' lat='52.82800499593' lon='22.42147563815'>
+    <tag k='name' v='Kity' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='24729' />
+    <tag k='ref:ibnr' v='1196' />
+  </node>
   <node id='-148876' action='modify' visible='true' lat='52.83333325702' lon='22.43654965281' />
-  <node id='-148877' action='modify' visible='true' lat='52.84118185254' lon='22.45877980113' />
+  <node id='-148877' action='modify' visible='true' lat='52.84118185254' lon='22.45877980113'>
+    <tag k='name' v='Dąbrowa Łazy' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='24711' />
+    <tag k='ref:ibnr' v='1103' />
+  </node>
   <node id='-148878' action='modify' visible='true' lat='52.8524888539' lon='22.49091266513' />
   <node id='-148879' action='modify' visible='true' lat='52.86048297314' lon='22.51357196689' />
   <node id='-148880' action='modify' visible='true' lat='52.86822951507' lon='22.53563045383' />
@@ -39868,6 +39879,12 @@
   <node id='-192013' action='modify' visible='true' lat='50.42167123165' lon='21.48835657954' />
   <node id='-192014' action='modify' visible='true' lat='50.42821253544' lon='21.49748681903' />
   <node id='-192015' action='modify' visible='true' lat='50.43318113517' lon='21.5044712913' />
+  <node id='-192171' action='modify' visible='true' lat='50.91051905653' lon='15.64554742593'>
+    <tag k='name' v='Rybnica' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='55836' />
+    <tag k='ref:ibnr' v='6395' />
+  </node>
   <way id='-103224' action='modify' visible='true'>
     <nd ref='-153087' />
     <nd ref='-153086' />
