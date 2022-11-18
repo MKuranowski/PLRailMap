@@ -39885,6 +39885,36 @@
     <tag k='ref' v='55836' />
     <tag k='ref:ibnr' v='6395' />
   </node>
+  <node id='-192175' action='modify' visible='true' lat='49.65836722274' lon='18.85485112131'>
+    <tag k='name' v='Wisła Uzdrowisko' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76992' />
+  </node>
+  <node id='-192227' action='modify' visible='true' lat='49.69672804322' lon='18.83002727956'>
+    <tag k='name' v='Ustroń Polana' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='77057' />
+  </node>
+  <node id='-192234' action='modify' visible='true' lat='49.72061232694' lon='18.81663500726'>
+    <tag k='name' v='Ustroń Zdrój' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76968' />
+  </node>
+  <node id='-192240' action='modify' visible='true' lat='49.74686280831' lon='18.74919354379'>
+    <tag k='name' v='Goleszów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76901' />
+  </node>
+  <node id='-192245' action='modify' visible='true' lat='52.15693325031' lon='19.27661239564'>
+    <tag k='name' v='Witonia' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='32516' />
+  </node>
+  <node id='-192286' action='modify' visible='true' lat='49.79354529741' lon='18.79014014661'>
+    <tag k='name' v='Skoczów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75788' />
+  </node>
   <way id='-103224' action='modify' visible='true'>
     <nd ref='-153087' />
     <nd ref='-153086' />
