@@ -37240,7 +37240,12 @@
   <node id='-162188' action='modify' visible='true' lat='49.95876469093' lon='19.80334460199' />
   <node id='-162189' action='modify' visible='true' lat='49.9575774848' lon='19.80333387315' />
   <node id='-162190' action='modify' visible='true' lat='49.95656281451' lon='19.80355917871' />
-  <node id='-162191' action='modify' visible='true' lat='49.95479917003' lon='19.80434774816' />
+  <node id='-162191' action='modify' visible='true' lat='49.95479917003' lon='19.80434774816'>
+    <tag k='name' v='Rzozów Centrum' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='264914' />
+    <tag k='ref:ibnr' v='6586' />
+  </node>
   <node id='-162192' action='modify' visible='true' lat='49.95409162326' lon='19.80462133348' />
   <node id='-162193' action='modify' visible='true' lat='49.95366363871' lon='19.8046857065' />
   <node id='-162194' action='modify' visible='true' lat='49.9527075627' lon='19.80467497766' />
@@ -39914,6 +39919,18 @@
     <tag k='name' v='Skoczów' />
     <tag k='railway' v='station' />
     <tag k='ref' v='75788' />
+  </node>
+  <node id='-192289' action='modify' visible='true' lat='50.37991411062' lon='19.75888430536'>
+    <tag k='name' v='Wolbrom Zachodni' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279914' />
+    <tag k='ref:ibnr' v='6589' />
+  </node>
+  <node id='-192320' action='modify' visible='true' lat='49.9103844322' lon='19.79341232806'>
+    <tag k='name' v='Wola Radziszowska Lipki' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='264915' />
+    <tag k='ref:ibnr' v='6587' />
   </node>
   <way id='-103224' action='modify' visible='true'>
     <nd ref='-153087' />
@@ -64476,6 +64493,7 @@
     <nd ref='-162234' />
     <nd ref='-162235' />
     <nd ref='-162236' />
+    <nd ref='-192320' />
     <nd ref='-162237' />
     <nd ref='-162238' />
     <nd ref='-162239' />
