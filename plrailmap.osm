@@ -29805,7 +29805,12 @@
   <node id='-154939' action='modify' visible='true' lat='54.37875465094' lon='18.48362266481' />
   <node id='-154940' action='modify' visible='true' lat='54.37859218348' lon='18.48427175939' />
   <node id='-154941' action='modify' visible='true' lat='54.37842346658' lon='18.48528026998' />
-  <node id='-154942' action='modify' visible='true' lat='54.37834223228' lon='18.48605811059' />
+  <node id='-154942' action='modify' visible='true' lat='54.37834223228' lon='18.48605811059'>
+    <tag k='name' v='Gdańsk Firoga' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='257540' />
+    <tag k='ref:ibnr' v='6592' />
+  </node>
   <node id='-154943' action='modify' visible='true' lat='54.37810165281' lon='18.48977565229' />
   <node id='-154944' action='modify' visible='true' lat='54.3776173652' lon='18.49699079454' />
   <node id='-154945' action='modify' visible='true' lat='54.37744551983' lon='18.49842845857' />
