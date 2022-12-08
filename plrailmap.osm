@@ -14955,7 +14955,7 @@
   <node id='-141611' action='modify' visible='true' lat='52.44042698261' lon='20.69790958285' />
   <node id='-141612' action='modify' visible='true' lat='52.44662006428' lon='21.47345423162' />
   <node id='-141613' action='modify' visible='true' lat='54.48130866406' lon='17.55108829021' />
-  <node id='-141614' action='modify' visible='true' lat='51.31025484818' lon='21.04600665808' />
+  <node id='-141614' action='modify' visible='true' lat='51.31024143492' lon='21.04604689122' />
   <node id='-141615' action='modify' visible='true' lat='52.18787833993' lon='20.636841048' />
   <node id='-141616' action='modify' visible='true' lat='53.13211900324' lon='20.34637391031' />
   <node id='-141617' action='modify' visible='true' lat='50.27664940798' lon='20.04442687511' />
@@ -17653,7 +17653,7 @@
   <node id='-144162' action='modify' visible='true' lat='54.44900212002' lon='18.55859040141' />
   <node id='-144163' action='modify' visible='true' lat='51.39164794105' lon='20.63257097125' />
   <node id='-144164' action='modify' visible='true' lat='52.09050276855' lon='20.56335924983' />
-  <node id='-144165' action='modify' visible='true' lat='51.42963811249' lon='21.30036590338' />
+  <node id='-144165' action='modify' visible='true' lat='51.42962473416' lon='21.30034981013' />
   <node id='-144166' action='modify' visible='true' lat='52.26712655172' lon='21.06359660089' />
   <node id='-144167' action='modify' visible='true' lat='52.43766695367' lon='23.00951241374' />
   <node id='-144168' action='modify' visible='true' lat='52.42905220362' lon='21.04765889883' />
@@ -39932,6 +39932,19 @@
     <tag k='ref' v='264915' />
     <tag k='ref:ibnr' v='6587' />
   </node>
+  <node id='-192327' action='modify' visible='true' lat='51.30999824462' lon='21.04601598421'>
+    <tag k='name' v='Dąbrówka Zachodnia' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279429' />
+    <tag k='ref:ibnr' v='6591' />
+  </node>
+  <node id='-192421' action='modify' visible='true' lat='51.42949094062' lon='21.30259751737' />
+  <node id='-192422' action='modify' visible='true' lat='51.42958997042' lon='21.30093383536'>
+    <tag k='name' v='Groszowice Wrzosów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279432' />
+    <tag k='ref:ibnr' v='6590' />
+  </node>
   <way id='-103224' action='modify' visible='true'>
     <nd ref='-153087' />
     <nd ref='-153086' />
@@ -40699,6 +40712,8 @@
     <nd ref='-141191' />
     <nd ref='-144463' />
     <nd ref='-143013' />
+    <nd ref='-192421' />
+    <nd ref='-192422' />
     <nd ref='-144165' />
     <nd ref='-142718' />
     <nd ref='-141271' />
@@ -41123,6 +41138,7 @@
     <nd ref='-144507' />
     <nd ref='-143054' />
     <nd ref='-141614' />
+    <nd ref='-192327' />
     <nd ref='-140180' />
     <nd ref='-140853' />
     <nd ref='-138430' />
