@@ -39050,7 +39050,12 @@
   <node id='-163981' action='modify' visible='true' lat='51.44072070567' lon='20.13667343974' />
   <node id='-163982' action='modify' visible='true' lat='51.4437500613' lon='20.1313948524' />
   <node id='-163983' action='modify' visible='true' lat='51.44678590264' lon='20.12616990924' />
-  <node id='-163984' action='modify' visible='true' lat='51.44907936699' lon='20.12222169757' />
+  <node id='-163984' action='modify' visible='true' lat='51.44907936699' lon='20.12222169757'>
+    <tag k='name' v='Tomaszówek' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279431' />
+    <tag k='ref:ibnr' v='6588' />
+  </node>
   <node id='-163985' action='modify' visible='true' lat='51.45069074097' lon='20.11951803088' />
   <node id='-163986' action='modify' visible='true' lat='51.45148637768' lon='20.11844514728' />
   <node id='-163987' action='modify' visible='true' lat='51.45369269268' lon='20.11641739726' />
