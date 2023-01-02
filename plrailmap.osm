@@ -3229,6 +3229,7 @@
     <tag k='railway' v='station' />
     <tag k='ref' v='33472' />
     <tag k='ref:ibnr' v='1477' />
+    <tag k='ref:ztmw' v='5909' />
     <tag k='wheelchair' v='yes' />
   </node>
   <node id='-138241' action='modify' visible='true' version='1' lat='52.23705755062' lon='21.1355087877'>
@@ -24098,7 +24099,6 @@
     <tag k='name' v='1' />
     <tag k='public_transport' v='platform' />
     <tag k='ref:station' v='33472' />
-    <tag k='ref:ztmw' v='790001' />
     <tag k='wheelchair' v='yes' />
   </node>
   <node id='-149487' action='modify' visible='true' lat='52.22503923528' lon='20.98550542921'>
