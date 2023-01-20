@@ -11,7 +11,7 @@ the following operators:
 - [x] PKP Intercity
 - [ ] PKP SKM Trójmiasto
 - [x] SKM Warszawa
-- [ ] Koleje Śląskie
+- [x] Koleje Śląskie
 - [ ] Koleje Dolnośląskie
 - [ ] Koleje Wielkopolskie
 - [ ] Warszawska Kolej Dojazdowa

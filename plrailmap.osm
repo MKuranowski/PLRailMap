@@ -40733,6 +40733,607 @@
   <node id='-193276' action='modify' visible='true' lat='50.42480870955' lon='19.99005316615' />
   <node id='-193277' action='modify' visible='true' lat='50.4257246225' lon='19.98996733546' />
   <node id='-193278' action='modify' visible='true' lat='50.42670544653' lon='19.98979031503' />
+  <node id='-999000' action='modify' visible='true' version='1' lat='49.73449667975' lon='18.7025624762'>
+    <tag k='name' v='Bażanowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76935' />
+    <tag k='ref:ibnr' v='4024' />
+  </node>
+  <node id='-999001' action='modify' visible='true' version='1' lat='49.97280654987' lon='18.37256265278'>
+    <tag k='name' v='Bełsznica' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68536' />
+    <tag k='ref:ibnr' v='4025' />
+  </node>
+  <node id='-999002' action='modify' visible='true' version='1' lat='49.86121812815' lon='19.03588119511'>
+    <tag k='name' v='Bielsko-Biała Komorowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76141' />
+    <tag k='ref:ibnr' v='4035' />
+  </node>
+  <node id='-999003' action='modify' visible='true' version='1' lat='49.797357912' lon='19.06044373016'>
+    <tag k='name' v='Bielsko-Biała Leszczyny' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76349' />
+    <tag k='ref:ibnr' v='4036' />
+  </node>
+  <node id='-999004' action='modify' visible='true' version='1' lat='49.78285653249' lon='19.07425717064'>
+    <tag k='name' v='Bielsko-Biała Mikuszowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76364' />
+    <tag k='ref:ibnr' v='4038' />
+  </node>
+  <node id='-999005' action='modify' visible='true' version='1' lat='49.84116060396' lon='19.04166854233'>
+    <tag k='name' v='Bielsko-Biała Północ' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76133' />
+    <tag k='ref:ibnr' v='4039' />
+  </node>
+  <node id='-999006' action='modify' visible='true' version='1' lat='50.35160076591' lon='18.88225323446'>
+    <tag k='name' v='Bytom Karb' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='72413' />
+    <tag k='ref:ibnr' v='4055' />
+  </node>
+  <node id='-999007' action='modify' visible='true' version='1' lat='50.37797263437' lon='18.88051271164'>
+    <tag k='name' v='Bytom Północny' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='258132' />
+  </node>
+  <node id='-999008' action='modify' visible='true' version='1' lat='50.29814112104' lon='18.94838064285'>
+    <tag k='name' v='Chorzów Miasto' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='72272' />
+    <tag k='ref:ibnr' v='4062' />
+  </node>
+  <node id='-999009' action='modify' visible='true' version='1' lat='49.88742198127' lon='18.82062416931'>
+    <tag k='name' v='Chybie Mnich' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75820' />
+    <tag k='ref:ibnr' v='4067' />
+  </node>
+  <node id='-999010' action='modify' visible='true' version='1' lat='49.75069091308' lon='18.64923667725'>
+    <tag k='name' v='Cieszyn Uniwersytet' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='264958' />
+  </node>
+  <node id='-999011' action='modify' visible='true' version='1' lat='49.62152120817' lon='19.15203827976'>
+    <tag k='name' v='Cięcina Dolna' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='178279' />
+    <tag k='ref:ibnr' v='4406' />
+  </node>
+  <node id='-999012' action='modify' visible='true' version='1' lat='49.60961488678' lon='19.13624294708'>
+    <tag k='name' v='Cięcina' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76752' />
+    <tag k='ref:ibnr' v='4071' />
+  </node>
+  <node id='-999013' action='modify' visible='true' version='1' lat='49.58355386059' lon='19.10562935715'>
+    <tag k='name' v='Cisiec' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76760' />
+    <tag k='ref:ibnr' v='4072' />
+  </node>
+  <node id='-999014' action='modify' visible='true' version='1' lat='49.89025728023' lon='19.02427973743'>
+    <tag k='name' v='Czechowice-Dziedzice Południowe' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76067' />
+    <tag k='ref:ibnr' v='4075' />
+  </node>
+  <node id='-999015' action='modify' visible='true' version='1' lat='49.90616888648' lon='19.0224190086'>
+    <tag k='name' v='Czechowice-Dziedzice Przystanek' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76075' />
+    <tag k='ref:ibnr' v='4076' />
+  </node>
+  <node id='-999016' action='modify' visible='true' version='1' lat='50.15684' lon='18.66369530556'>
+    <tag k='name' v='Czerwionka Dębieńsko' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='178592' />
+    <tag k='ref:ibnr' v='4080' />
+  </node>
+  <node id='-999017' action='modify' visible='true' version='1' lat='50.14894531333' lon='18.68494285648'>
+    <tag k='name' v='Czerwionka' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68122' />
+    <tag k='ref:ibnr' v='4079' />
+  </node>
+  <node id='-999018' action='modify' visible='true' version='1' lat='49.97420639822' lon='18.42581309193'>
+    <tag k='name' v='Czyżowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='178587' />
+    <tag k='ref:ibnr' v='4087' />
+  </node>
+  <node id='-999019' action='modify' visible='true' version='1' lat='49.93567873331' lon='18.97665839748'>
+    <tag k='name' v='Goczałkowice-Zdrój' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75952' />
+    <tag k='ref:ibnr' v='4107' />
+  </node>
+  <node id='-999020' action='modify' visible='true' version='1' lat='49.94449289139' lon='18.96657300133'>
+    <tag k='name' v='Goczałkowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75937' />
+    <tag k='ref:ibnr' v='4106' />
+  </node>
+  <node id='-999021' action='modify' visible='true' version='1' lat='49.7369509445' lon='18.73343384789'>
+    <tag k='name' v='Goleszów Górny' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76927' />
+    <tag k='ref:ibnr' v='4110' />
+  </node>
+  <node id='-999022' action='modify' visible='true' version='1' lat='50.1421546937' lon='18.38960349934'>
+    <tag k='name' v='Górki Śląskie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68866' />
+    <tag k='ref:ibnr' v='4113' />
+  </node>
+  <node id='-999023' action='modify' visible='true' version='1' lat='50.24416949256' lon='18.98328110912'>
+    <tag k='name' v='Katowice Brynów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='72942' />
+    <tag k='ref:ibnr' v='4145' />
+  </node>
+  <node id='-999024' action='modify' visible='true' version='1' lat='50.21348791053' lon='18.97053335449'>
+    <tag k='name' v='Katowice Piotrowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='72967' />
+    <tag k='ref:ibnr' v='4152' />
+  </node>
+  <node id='-999025' action='modify' visible='true' version='1' lat='50.18298809058' lon='18.96032145767'>
+    <tag k='name' v='Katowice Podlesie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='72975' />
+    <tag k='ref:ibnr' v='4153' />
+  </node>
+  <node id='-999026' action='modify' visible='true' version='1' lat='50.26379575394' lon='18.98981647354'>
+    <tag k='name' v='Katowice Załęże' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='73338' />
+    <tag k='ref:ibnr' v='4156' />
+  </node>
+  <node id='-999027' action='modify' visible='true' version='1' lat='50.06595010263' lon='18.92348609325'>
+    <tag k='name' v='Kobiór' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75960' />
+    <tag k='ref:ibnr' v='4349' />
+  </node>
+  <node id='-999028' action='modify' visible='true' version='1' lat='50.7386197704' lon='19.17659510185'>
+    <tag k='name' v='Korwinów' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='62729' />
+    <tag k='ref:ibnr' v='4176' />
+  </node>
+  <node id='-999029' action='modify' visible='true' version='1' lat='49.98925114159' lon='18.27591110912'>
+    <tag k='name' v='Krzyżanowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='67967' />
+    <tag k='ref:ibnr' v='4186' />
+  </node>
+  <node id='-999030' action='modify' visible='true' version='1' lat='49.52296633333' lon='19.00499539616'>
+    <tag k='name' v='Laliki' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76851' />
+    <tag k='ref:ibnr' v='4193' />
+  </node>
+  <node id='-999031' action='modify' visible='true' version='1' lat='50.13993819629' lon='18.61775967857'>
+    <tag k='name' v='Leszczyny' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68064' />
+    <tag k='ref:ibnr' v='4195' />
+  </node>
+  <node id='-999032' action='modify' visible='true' version='1' lat='50.15785681215' lon='18.82126137169'>
+    <tag k='name' v='Łaziska Górne Brada' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69047' />
+    <tag k='ref:ibnr' v='4204' />
+  </node>
+  <node id='-999033' action='modify' visible='true' version='1' lat='50.15944503713' lon='18.84541889549'>
+    <tag k='name' v='Łaziska Górne' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69054' />
+    <tag k='ref:ibnr' v='4203' />
+  </node>
+  <node id='-999034' action='modify' visible='true' version='1' lat='49.73574152761' lon='19.12376268452'>
+    <tag k='name' v='Łodygowice Górne' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76380' />
+    <tag k='ref:ibnr' v='4211' />
+  </node>
+  <node id='-999035' action='modify' visible='true' version='1' lat='50.10013054719' lon='18.40926244907'>
+    <tag k='name' v='Łuków Śląski' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68361' />
+    <tag k='ref:ibnr' v='4212' />
+  </node>
+  <node id='-999036' action='modify' visible='true' version='1' lat='50.65062169658' lon='19.25378664782'>
+    <tag k='name' v='Masłońskie Natalin' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='62745' />
+    <tag k='ref:ibnr' v='4213' />
+  </node>
+  <node id='-999037' action='modify' visible='true' version='1' lat='50.19409231031' lon='18.92277308731'>
+    <tag k='name' v='Mikołów Jamna' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69070' />
+    <tag k='ref:ibnr' v='4218' />
+  </node>
+  <node id='-999038' action='modify' visible='true' version='1' lat='49.54029107881' lon='19.10260052513'>
+    <tag k='name' v='Milówka Zabawa' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76794' />
+    <tag k='ref:ibnr' v='4403' />
+  </node>
+  <node id='-999039' action='modify' visible='true' version='1' lat='50.54381135516' lon='19.37716740608'>
+    <tag k='name' v='Myszków Mrzygłód' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75457' />
+    <tag k='ref:ibnr' v='4229' />
+  </node>
+  <node id='-999040' action='modify' visible='true' version='1' lat='50.59464951696' lon='19.29168192394'>
+    <tag k='name' v='Myszków Nowa Wieś' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75432' />
+    <tag k='ref:ibnr' v='4230' />
+  </node>
+  <node id='-999041' action='modify' visible='true' version='1' lat='50.56544962737' lon='19.36020571297'>
+    <tag k='name' v='Myszków Światowit' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75440' />
+    <tag k='ref:ibnr' v='4231' />
+  </node>
+  <node id='-999042' action='modify' visible='true' version='1' lat='50.42986492787' lon='18.90304693981'>
+    <tag k='name' v='Nakło Śląskie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='71043' />
+    <tag k='ref:ibnr' v='4232' />
+  </node>
+  <node id='-999043' action='modify' visible='true' version='1' lat='50.16469498171' lon='18.31223923943'>
+    <tag k='name' v='Nędza Wieś' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68833' />
+    <tag k='ref:ibnr' v='4234' />
+  </node>
+  <node id='-999044' action='modify' visible='true' version='1' lat='49.96018255213' lon='18.33838550926'>
+    <tag k='name' v='Olza' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68502' />
+    <tag k='ref:ibnr' v='4237' />
+  </node>
+  <node id='-999045' action='modify' visible='true' version='1' lat='50.15428844348' lon='18.77756781349'>
+    <tag k='name' v='Orzesze' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69005' />
+    <tag k='ref:ibnr' v='4239' />
+  </node>
+  <node id='-999046' action='modify' visible='true' version='1' lat='50.01272615287' lon='18.94000588955'>
+    <tag k='name' v='Piasek' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75986' />
+    <tag k='ref:ibnr' v='4253' />
+  </node>
+  <node id='-999047' action='modify' visible='true' version='1' lat='49.83056346032' lon='18.81341463558'>
+    <tag k='name' v='Pierściec' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75762' />
+    <tag k='ref:ibnr' v='4256' />
+  </node>
+  <node id='-999048' action='modify' visible='true' version='1' lat='49.70994631675' lon='19.17209250793'>
+    <tag k='name' v='Pietrzykowice Żywieckie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76430' />
+    <tag k='ref:ibnr' v='4258' />
+  </node>
+  <node id='-999049' action='modify' visible='true' version='1' lat='50.67686464976' lon='19.21926008598'>
+    <tag k='name' v='Poraj' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='264927' />
+    <tag k='ref:ibnr' v='4263' />
+  </node>
+  <node id='-999050' action='modify' visible='true' version='1' lat='50.24704171655' lon='18.73651151653'>
+    <tag k='name' v='Przyszowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69971' />
+    <tag k='ref:ibnr' v='4267' />
+  </node>
+  <node id='-999051' action='modify' visible='true' version='1' lat='50.01138515787' lon='18.92118271164'>
+    <tag k='name' v='Pszczyna Czarków' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69328' />
+    <tag k='ref:ibnr' v='4404' />
+  </node>
+  <node id='-999052' action='modify' visible='true' version='1' lat='50.04119950607' lon='18.49472384789'>
+    <tag k='name' v='Radlin Obszary' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68460' />
+    <tag k='ref:ibnr' v='4375' />
+  </node>
+  <node id='-999053' action='modify' visible='true' version='1' lat='50.0205486852' lon='18.88910399273'>
+    <tag k='name' v='Radostowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69278' />
+    <tag k='ref:ibnr' v='4272' />
+  </node>
+  <node id='-999054' action='modify' visible='true' version='1' lat='49.64746128844' lon='19.1639607877'>
+    <tag k='name' v='Radziechowy Wieprz' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76745' />
+    <tag k='ref:ibnr' v='4273' />
+  </node>
+  <node id='-999055' action='modify' visible='true' version='1' lat='50.39637792776' lon='18.90067976456'>
+    <tag k='name' v='Radzionków Rojca' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='71068' />
+    <tag k='ref:ibnr' v='4058' />
+  </node>
+  <node id='-999056' action='modify' visible='true' version='1' lat='50.40903221973' lon='18.91507854233'>
+    <tag k='name' v='Radzionków' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='71050' />
+    <tag k='ref:ibnr' v='4057' />
+  </node>
+  <node id='-999057' action='modify' visible='true' version='1' lat='49.51682051365' lon='19.11250501587'>
+    <tag k='name' v='Rajcza' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76786' />
+    <tag k='ref:ibnr' v='4274' />
+  </node>
+  <node id='-999058' action='modify' visible='true' version='1' lat='49.96520169055' lon='18.29408827976'>
+    <tag k='name' v='Roszków Raciborski' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='67959' />
+    <tag k='ref:ibnr' v='4276' />
+  </node>
+  <node id='-999059' action='modify' visible='true' version='1' lat='50.30384832591' lon='18.87795927116'>
+    <tag k='name' v='Ruda Chebzie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='70607' />
+    <tag k='ref:ibnr' v='4278' />
+  </node>
+  <node id='-999060' action='modify' visible='true' version='1' lat='50.31592221136' lon='18.85089699867'>
+    <tag k='name' v='Ruda Śląska' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69849' />
+    <tag k='ref:ibnr' v='4282' />
+  </node>
+  <node id='-999061' action='modify' visible='true' version='1' lat='49.93986917242' lon='18.30329'>
+    <tag k='name' v='Rudyszwałd' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='67942' />
+    <tag k='ref:ibnr' v='4287' />
+  </node>
+  <node id='-999062' action='modify' visible='true' version='1' lat='50.06629948031' lon='18.49496676323'>
+    <tag k='name' v='Rybnik Niedobczyce' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68312' />
+    <tag k='ref:ibnr' v='4291' />
+  </node>
+  <node id='-999063' action='modify' visible='true' version='1' lat='50.06934622718' lon='18.4687709914'>
+    <tag k='name' v='Rybnik Niewiadom' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68296' />
+    <tag k='ref:ibnr' v='4292' />
+  </node>
+  <node id='-999064' action='modify' visible='true' version='1' lat='50.10251827812' lon='18.56520405159'>
+    <tag k='name' v='Rybnik Paruszowiec' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68098' />
+    <tag k='ref:ibnr' v='4293' />
+  </node>
+  <node id='-999065' action='modify' visible='true' version='1' lat='50.09647097133' lon='18.5866483115'>
+    <tag k='name' v='Rybnik Piaski' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68262' />
+    <tag k='ref:ibnr' v='4294' />
+  </node>
+  <node id='-999066' action='modify' visible='true' version='1' lat='50.05642767327' lon='18.49755323677'>
+    <tag k='name' v='Rybnik Rymer' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68056' />
+    <tag k='ref:ibnr' v='4295' />
+  </node>
+  <node id='-999067' action='modify' visible='true' version='1' lat='50.06665919822' lon='18.51573160252'>
+    <tag k='name' v='Rybnik Towarowy' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68007' />
+    <tag k='ref:ibnr' v='4296' />
+  </node>
+  <node id='-999068' action='modify' visible='true' version='1' lat='49.49875298843' lon='19.08179093254'>
+    <tag k='name' v='Rycerka' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76828' />
+    <tag k='ref:ibnr' v='4297' />
+  </node>
+  <node id='-999069' action='modify' visible='true' version='1' lat='50.06904509166' lon='18.42603005886'>
+    <tag k='name' v='Rydułtowy' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68320' />
+    <tag k='ref:ibnr' v='4298' />
+  </node>
+  <node id='-999070' action='modify' visible='true' version='1' lat='49.49886651601' lon='18.93579661839'>
+    <tag k='name' v='Skalité-Kudlov' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='190034' />
+  </node>
+  <node id='-999071' action='modify' visible='true' version='1' lat='49.49575140542' lon='18.91596054764'>
+    <tag k='name' v='Skalité pod Poľanou' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='190035' />
+  </node>
+  <node id='-999072' action='modify' visible='true' version='1' lat='49.50155729164' lon='18.96396997288'>
+    <tag k='name' v='Skalité-Serafínov' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='190033' />
+  </node>
+  <node id='-999073' action='modify' visible='true' version='1' lat='49.49816832447' lon='18.89083128109'>
+    <tag k='name' v='Skalité' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='179282' />
+  </node>
+  <node id='-999074' action='modify' visible='true' version='1' lat='49.79863396252' lon='18.80108483929'>
+    <tag k='name' v='Skoczów Bajerki' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='264957' />
+    <tag k='ref:ibnr' v='6407' />
+  </node>
+  <node id='-999075' action='modify' visible='true' version='1' lat='49.77192235689' lon='18.77900670437'>
+    <tag k='name' v='Skoczów Bładnice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76943' />
+    <tag k='ref:ibnr' v='4306' />
+  </node>
+  <node id='-999076' action='modify' visible='true' version='1' lat='49.51724085602' lon='19.03116449074'>
+    <tag k='name' v='Sól Kiczora' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76844' />
+    <tag k='ref:ibnr' v='4320' />
+  </node>
+  <node id='-999077' action='modify' visible='true' version='1' lat='49.91141491041' lon='18.75329137169'>
+    <tag k='name' v='Strumień' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75879' />
+    <tag k='ref:ibnr' v='4324' />
+  </node>
+  <node id='-999078' action='modify' visible='true' version='1' lat='50.1215598704' lon='18.41049609325'>
+    <tag k='name' v='Sumina Wieś' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68379' />
+    <tag k='ref:ibnr' v='4327' />
+  </node>
+  <node id='-999079' action='modify' visible='true' version='1' lat='50.13689882252' lon='18.40180501587'>
+    <tag k='name' v='Sumina' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68338' />
+    <tag k='ref:ibnr' v='4326' />
+  </node>
+  <node id='-999080' action='modify' visible='true' version='1' lat='50.03952386643' lon='18.77397384789'>
+    <tag k='name' v='Suszec Kopalnia' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69211' />
+    <tag k='ref:ibnr' v='4329' />
+  </node>
+  <node id='-999081' action='modify' visible='true' version='1' lat='50.04564722454' lon='18.75416122684'>
+    <tag k='name' v='Suszec Rudziczka' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69252' />
+    <tag k='ref:ibnr' v='4330' />
+  </node>
+  <node id='-999082' action='modify' visible='true' version='1' lat='50.03505101101' lon='18.79211807606'>
+    <tag k='name' v='Suszec' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='69260' />
+    <tag k='ref:ibnr' v='4328' />
+  </node>
+  <node id='-999083' action='modify' visible='true' version='1' lat='50.07961016852' lon='18.67183868717'>
+    <tag k='name' v='Szczejkowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68247' />
+    <tag k='ref:ibnr' v='4332' />
+  </node>
+  <node id='-999084' action='modify' visible='true' version='1' lat='50.1510884347' lon='18.34973880489'>
+    <tag k='name' v='Szymocice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68841' />
+    <tag k='ref:ibnr' v='4334' />
+  </node>
+  <node id='-999085' action='modify' visible='true' version='1' lat='50.28902483856' lon='18.91827510185'>
+    <tag k='name' v='Świętochłowice' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='73148' />
+    <tag k='ref:ibnr' v='4335' />
+  </node>
+  <node id='-999086' action='modify' visible='true' version='1' lat='50.01673121283' lon='18.24934670437'>
+    <tag k='name' v='Tworków' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68890' />
+    <tag k='ref:ibnr' v='4343' />
+  </node>
+  <node id='-999087' action='modify' visible='true' version='1' lat='50.11715439773' lon='18.98254536442'>
+    <tag k='name' v='Tychy Aleja Bielska' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='242838' />
+  </node>
+  <node id='-999088' action='modify' visible='true' version='1' lat='50.11395648009' lon='18.98641749207'>
+    <tag k='name' v='Tychy Grota Roweckiego' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='242837' />
+  </node>
+  <node id='-999089' action='modify' visible='true' version='1' lat='50.10765935728' lon='19.00079358532'>
+    <tag k='name' v='Tychy Lodowisko' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='242839' />
+  </node>
+  <node id='-999090' action='modify' visible='true' version='1' lat='50.12089681503' lon='18.97904093254'>
+    <tag k='name' v='Tychy Zachodnie' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='73742' />
+    <tag k='ref:ibnr' v='4354' />
+  </node>
+  <node id='-999091' action='modify' visible='true' version='1' lat='50.11003417123' lon='18.95315142824'>
+    <tag k='name' v='Tychy Żwaków' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75978' />
+    <tag k='ref:ibnr' v='4355' />
+  </node>
+  <node id='-999092' action='modify' visible='true' version='1' lat='49.70970550335' lon='18.82127271164'>
+    <tag k='name' v='Ustroń Brzegi' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='264959' />
+  </node>
+  <node id='-999093' action='modify' visible='true' version='1' lat='49.7280059706' lon='18.80220434589'>
+    <tag k='name' v='Ustroń' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='76950' />
+    <tag k='ref:ibnr' v='4356' />
+  </node>
+  <node id='-999094' action='modify' visible='true' version='1' lat='49.64738210113' lon='18.86546046627'>
+    <tag k='name' v='Wisła Dziechcinka' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='77024' />
+    <tag k='ref:ibnr' v='4368' />
+  </node>
+  <node id='-999095' action='modify' visible='true' version='1' lat='49.62172006961' lon='18.87606200993'>
+    <tag k='name' v='Wisła Głębce' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='77040' />
+    <tag k='ref:ibnr' v='4369' />
+  </node>
+  <node id='-999096' action='modify' visible='true' version='1' lat='49.66946234527' lon='18.84744093254'>
+    <tag k='name' v='Wisła Jawornik' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='264960' />
+  </node>
+  <node id='-999097' action='modify' visible='true' version='1' lat='49.63485155524' lon='18.86985810549'>
+    <tag k='name' v='Wisła Kopydło' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='77032' />
+    <tag k='ref:ibnr' v='4370' />
+  </node>
+  <node id='-999098' action='modify' visible='true' version='1' lat='50.01987991223' lon='18.48096510185'>
+    <tag k='name' v='Wodzisław Śląski Radlin' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='68445' />
+    <tag k='ref:ibnr' v='4377' />
+  </node>
+  <node id='-999099' action='modify' visible='true' version='1' lat='49.87041510577' lon='18.81123661839'>
+    <tag k='name' v='Zaborze' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75770' />
+    <tag k='ref:ibnr' v='4383' />
+  </node>
+  <node id='-999100' action='modify' visible='true' version='1' lat='50.51064778979' lon='19.39917285648'>
+    <tag k='name' v='Zawiercie Borowe Pole' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='75341' />
+    <tag k='ref:ibnr' v='4393' />
+  </node>
+  <node id='-999101' action='modify' visible='true' version='1' lat='50.62326790183' lon='19.27292145767'>
+    <tag k='name' v='Żarki Letnisko' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='62752' />
+    <tag k='ref:ibnr' v='4398' />
+  </node>
   <way id='-130137' action='modify' visible='true'>
     <nd ref='-157500' />
     <nd ref='-157499' />
