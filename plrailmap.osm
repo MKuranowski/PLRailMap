@@ -40065,7 +40065,12 @@
   <node id='-192530' action='modify' visible='true' lat='50.00453951779' lon='19.41493390918' />
   <node id='-192531' action='modify' visible='true' lat='50.0048084498' lon='19.41215514064' />
   <node id='-192532' action='modify' visible='true' lat='50.00513254534' lon='19.40831421733' />
-  <node id='-192533' action='modify' visible='true' lat='50.00537733601' lon='19.40544962347' />
+  <node id='-192533' action='modify' visible='true' lat='50.00540147057' lon='19.4053396529'>
+    <tag k='name' v='Zator Park Rozrywki' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279915' />
+    <tag k='ref:ibnr' v='6585' />
+  </node>
   <node id='-192534' action='modify' visible='true' lat='50.00598759199' lon='19.39862608373' />
   <node id='-192535' action='modify' visible='true' lat='50.00650819972' lon='19.39257502019' />
   <node id='-192536' action='modify' visible='true' lat='50.00673919604' lon='19.38991963327' />
@@ -43379,6 +43384,24 @@
   <node id='-1001665' action='modify' visible='true' lat='49.99750537209' lon='18.94803106517' />
   <node id='-1001666' action='modify' visible='true' lat='49.99670362162' lon='18.94873916835' />
   <node id='-1001667' action='modify' visible='true' lat='49.99595544636' lon='18.94927352294' />
+  <node id='-1001742' action='modify' visible='true' lat='53.4192337567' lon='20.39987454619'>
+    <tag k='name' v='Wietrzychowo' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279322' />
+    <tag k='ref:ibnr' v='6610' />
+  </node>
+  <node id='-1001793' action='modify' visible='true' lat='53.80288260065' lon='20.56528917549'>
+    <tag k='name' v='Nikielkowo' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279439' />
+    <tag k='ref:ibnr' v='6612' />
+  </node>
+  <node id='-1001836' action='modify' visible='true' lat='53.99374730088' lon='20.99174862698'>
+    <tag k='name' v='Kolno' />
+    <tag k='railway' v='station' />
+    <tag k='ref' v='279440' />
+    <tag k='ref:ibnr' v='6611' />
+  </node>
   <way id='-130137' action='modify' visible='true'>
     <nd ref='-157500' />
     <nd ref='-157499' />
@@ -56763,6 +56786,7 @@
     <nd ref='-155756' />
     <nd ref='-155757' />
     <nd ref='-155758' />
+    <nd ref='-1001793' />
     <nd ref='-155759' />
     <nd ref='-155760' />
     <nd ref='-155761' />
@@ -56850,6 +56874,7 @@
     <nd ref='-155838' />
     <nd ref='-155839' />
     <nd ref='-155840' />
+    <nd ref='-1001836' />
     <nd ref='-155841' />
     <nd ref='-155842' />
     <nd ref='-155843' />
@@ -57286,6 +57311,7 @@
     <nd ref='-156251' />
     <nd ref='-156252' />
     <nd ref='-156253' />
+    <nd ref='-1001742' />
     <nd ref='-156254' />
     <nd ref='-156255' />
     <nd ref='-143316' />
