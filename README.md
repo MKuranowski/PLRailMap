@@ -16,7 +16,7 @@ the following operators:
 - [ ] Koleje Wielkopolskie
 - [ ] Warszawska Kolej Dojazdowa
 - [x] Koleje Małopolskie
-- [ ] Łódzka Kolej Aglomeracyjna
+- [x] Łódzka Kolej Aglomeracyjna
 - [ ] Arriva RP
 
 In the future it would also be nice to also draw the rail lines.
