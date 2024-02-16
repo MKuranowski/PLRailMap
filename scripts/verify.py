@@ -85,11 +85,6 @@ def verify_uniq_names(stations: List[Station]) -> bool:
         stations_by_name[station.name].append(station)
 
     for invalid_group in filter(lambda stations: len(stations) > 1, stations_by_name.values()):
-        # Warszawa Zachodnia is represented by 3 nodes, 2 "Warszawa Zachodnia" parent+main stop,
-        # and 1 "Warszawa Zachodnia (Peron 8)"
-        if all(s.ibnr == "404" for s in invalid_group):
-            continue
-
         if ok:
             ok = False
             print(f"{Color.on_prev_line}❌ {Color.red}Found duplicate names:{Color.reset}")
@@ -115,12 +110,6 @@ def verify_uniq_ibnr(stations: List[Station]) -> bool:
             stations_by_ibnr[station.ibnr].append(station)
 
     for invalid_group in filter(lambda stations: len(stations) > 1, stations_by_ibnr.values()):
-        # Warszawa Zachodnia is a special group where 2 stations can
-        # have the same IBNR code (404)
-        if len(invalid_group) == 2 and {s.pkpplk for s in invalid_group} \
-                == {"33506", "34868"}:
-            continue
-
         if ok:
             ok = False
             print(f"{Color.on_prev_line}❌ {Color.red}Found duplicate IBNR codes:{Color.reset}")
