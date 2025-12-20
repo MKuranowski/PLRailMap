@@ -21,6 +21,13 @@ class Platform(NamedTuple):
     other_tags: Dict[str, str]
 
 
+class StopPosition(NamedTuple):
+    id: str
+    station: str
+    towards: str
+    position: Tuple[float, float]
+
+
 class OSMLoader(SAXContentHandler):
     def __init__(self) -> None:
         super().__init__()
@@ -28,6 +35,7 @@ class OSMLoader(SAXContentHandler):
         self.position: Tuple[float, float] = math.nan, math.nan
         self.stations: List[Station] = []
         self.platforms: Dict[str, List[Platform]] = {}
+        self.stop_positions: Dict[str, List[StopPosition]] = {}
         self.in_node: bool = False
 
     def startElement(self, name: str, attrs: Mapping[str, str]):
@@ -62,6 +70,15 @@ class OSMLoader(SAXContentHandler):
                     station=station,
                     position=self.position,
                     other_tags=self.tags,
+                ))
+
+            elif self.tags.get("public_transport") == "stop_position":
+                station = self.tags["ref:station"]
+                self.stop_positions.setdefault(station, []).append(StopPosition(
+                    id=self.tags["_id"],
+                    station=station,
+                    towards=self.tags.get("towards", ""),
+                    position=self.position,
                 ))
 
     @classmethod

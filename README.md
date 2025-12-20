@@ -42,8 +42,6 @@ Optional tags:
 
 If the station name is not in Polish, `name:pl` should also be present.
 
-Another optional 
-
 ### Platforms
 
 These tags are always required:
@@ -105,3 +103,22 @@ closest_hint = min(
 )
 return station.platform_with_hint(closest_hint)
 ```
+
+### Stop Positions
+
+By default, `railway=station` nodes should be part of a `railway=rail` way.
+
+However, there are a couple of edge-case stations, where such 1-to-1 mapping is not possible
+(see Opole Główne or Kraków Bieżanów). In these cases extra `public_transport=stop_position`
+nodes may be present on the `railway=rail` ways, and the `railway=station` node will be left unattached.
+
+In those cases the following tags are required:
+- `public_transport=stop_position`,
+- `ref:station` - ID (`ref`) of the whole station.
+- `towards` - list (`;`-separated) of IDs of stations which immediately follow or precede this station
+    for this stop_position to apply; or `fallback`. When a station uses stop positions, there must
+    be at least exactly one fallback stop position.
+
+The following tags may be optionally provided:
+- `platforms` - list (`;`-separated) of names of platforms for which this stop position applies.
+    Offers and alternative matching method if reliable platform data is available for trains.

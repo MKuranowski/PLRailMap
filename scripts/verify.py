@@ -6,7 +6,7 @@ from collections import Counter, defaultdict
 from itertools import chain
 from typing import Dict, List, Optional
 
-from .loader import OSMLoader, Platform, Station
+from .loader import OSMLoader, Platform, Station, StopPosition
 from .util import distance, group_by, osm_list
 
 ID_WIDTH = 8
@@ -252,6 +252,74 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
     return ok
 
 
+def verify_stop_positions(
+    stations_map: Dict[str, Station],
+    all_stop_positions: Dict[str, List[StopPosition]],
+) -> bool:
+    ok: bool = True
+    print(f"{Color.dim}Checking stop positions{Color.reset}")
+
+    for station_id, stop_positions in all_stop_positions.items():
+        issues: List[str] = []
+
+        # Validate the reference
+        station = stations_map.get(station_id)
+        if station is None:
+            ok = False
+            print(f"Invalid reference to station {Color.blue}{station_id}{Color.reset} "
+                  "from stop positions:", ", ".join(sorted(i.id for i in stop_positions)))
+            continue
+
+        # Validate the stop positions
+        fallback_stop_positions = 0
+        for sp in stop_positions:
+            # Ensure the platform isn't too far away
+            distance_from_station = distance(sp.position, station.position)
+            if distance_from_station > 100.0 or math.isnan(distance_from_station):
+                issues.append(
+                    f"Stop Position {Color.blue}{sp.id}{Color.reset}: "
+                    f"is {Color.yellow}{distance_from_station:.2f} m{Color.reset}"
+                    " away from the station node"
+                )
+
+            # Validate "towards"
+            if sp.towards == "":
+                issues.append(
+                    f"Stop Position {Color.blue}{sp.id}{Color.reset}: has no \"towards\" tag "
+                )
+            elif sp.towards == "fallback":
+                fallback_stop_positions += 1
+            else:
+                all_references = set(sp.towards.split(";"))
+                unknown_references = {i for i in all_references if i not in stations_map}
+                if unknown_references:
+                    unknown_references_str = ", ".join(sorted(unknown_references))
+                    issues.append(
+                        f"Stop Position {Color.blue}{sp.id}{Color.reset}: "
+                        "\"towards\" tag references unknown stations - "
+                        f"{Color.yellow}{unknown_references_str}{Color.reset}"
+                    )
+
+        # Ensure exactly one fallback stop position
+        if fallback_stop_positions != 1:
+            issues.append(
+                f"Got {fallback_stop_positions} \"towards=fallback\" Stop Positions, "
+                "expected exactly 1"
+            )
+
+        # Print the collected issues
+        if issues:
+            ok = False
+            station = stations_map[station_id]
+            print(f"Issues in {Color.blue}{station.pkpplk}{Color.reset} ({station.name}):")
+            for issue in issues:
+                print("    " + issue)
+
+    if ok:
+        print(f"{Color.on_prev_line}✅ {Color.green}Stop Positions are OK{Color.reset}")
+
+    return ok
+
 if __name__ == "__main__":
     data = OSMLoader.load_all("plrailmap.osm")
     ok = True
@@ -263,4 +331,5 @@ if __name__ == "__main__":
     stations_map: Dict[str, Station] = {i.pkpplk: i for i in data.stations}
 
     ok = verify_platforms(stations_map, data.platforms) and ok
+    ok = verify_stop_positions(stations_map, data.stop_positions) and ok
     sys.exit(0 if ok else 1)
