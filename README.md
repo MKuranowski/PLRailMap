@@ -21,6 +21,15 @@ the following operators:
 
 In the future it would also be nice to also draw the rail lines.
 
+License
+-------
+
+The map itself, <plrailmap.osm> is available under the [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).
+
+Everything else in this repository (in particular the `plrailmap` Python module) is available
+under the [MIT license](LICENSE).
+
+
 Tagging
 -------
 
@@ -115,10 +124,10 @@ nodes may be present on the `railway=rail` ways, and the `railway=station` node 
 In those cases the following tags are required:
 - `public_transport=stop_position`,
 - `ref:station` - ID (`ref`) of the whole station.
-- `towards` - list (`;`-separated) of IDs of stations which immediately follow or precede this station
-    for this stop_position to apply; or `fallback`. When a station uses stop positions, there must
-    be at least exactly one fallback stop position.
+- `platforms` - list (`;`-separated) of names of platforms for which this stop position applies.
 
 The following tags may be optionally provided:
-- `platforms` - list (`;`-separated) of names of platforms for which this stop position applies.
-    Offers and alternative matching method if reliable platform data is available for trains.
+- `towards` - list (`;`-separated) of IDs of stations which immediately follow or precede this station
+    for this stop_position to apply; or `fallback`. When a station uses stop positions, there must
+    be at least exactly one fallback stop position. Offers and alternative matching method
+    if reliable platform data is not available for trains.

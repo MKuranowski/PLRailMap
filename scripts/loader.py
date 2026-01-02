@@ -25,6 +25,7 @@ class StopPosition(NamedTuple):
     id: str
     station: str
     towards: str
+    platforms: list[str]
     position: Tuple[float, float]
 
 
@@ -53,33 +54,40 @@ class OSMLoader(SAXContentHandler):
             self.in_node = False
 
             if self.tags.get("railway") == "station":
-                self.stations.append(Station(
-                    id=self.tags["_id"],
-                    name=self.tags["name"],
-                    pkpplk=self.tags["ref"],
-                    ibnr=self.tags.get("ref:ibnr"),
-                    position=self.position,
-                    other_tags=self.tags,
-                ))
+                self.stations.append(
+                    Station(
+                        id=self.tags["_id"],
+                        name=self.tags["name"],
+                        pkpplk=self.tags["ref"],
+                        ibnr=self.tags.get("ref:ibnr"),
+                        position=self.position,
+                        other_tags=self.tags,
+                    )
+                )
 
             elif self.tags.get("public_transport") == "platform":
                 station = self.tags["ref:station"]
-                self.platforms.setdefault(station, []).append(Platform(
-                    id=self.tags["_id"],
-                    name=self.tags["name"],
-                    station=station,
-                    position=self.position,
-                    other_tags=self.tags,
-                ))
+                self.platforms.setdefault(station, []).append(
+                    Platform(
+                        id=self.tags["_id"],
+                        name=self.tags["name"],
+                        station=station,
+                        position=self.position,
+                        other_tags=self.tags,
+                    )
+                )
 
             elif self.tags.get("public_transport") == "stop_position":
                 station = self.tags["ref:station"]
-                self.stop_positions.setdefault(station, []).append(StopPosition(
-                    id=self.tags["_id"],
-                    station=station,
-                    towards=self.tags.get("towards", ""),
-                    position=self.position,
-                ))
+                self.stop_positions.setdefault(station, []).append(
+                    StopPosition(
+                        id=self.tags["_id"],
+                        station=station,
+                        towards=self.tags.get("towards", ""),
+                        platforms=_unpack(self.tags.get("platforms", "")),
+                        position=self.position,
+                    )
+                )
 
     @classmethod
     def load_all(cls, path: str) -> "OSMLoader":
@@ -87,3 +95,7 @@ class OSMLoader(SAXContentHandler):
         with open(path, "rb") as stream:
             sax_parse(stream, handler)
         return handler
+
+
+def _unpack(x: str, sep: str = ";") -> list[str]:
+    return x.split(sep) if x else []

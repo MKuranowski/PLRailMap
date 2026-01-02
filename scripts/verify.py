@@ -25,16 +25,16 @@ FIELDS = [
 
 
 class Color:
-    reset = "\x1B[0m"
-    bold = "\x1B[1m"
-    dim = "\x1B[2m"
+    reset = "\x1b[0m"
+    bold = "\x1b[1m"
+    dim = "\x1b[2m"
 
-    red = "\x1B[31m"
-    green = "\x1B[32m"
-    yellow = "\x1B[33m"
-    blue = "\x1B[34m"
+    red = "\x1b[31m"
+    green = "\x1b[32m"
+    yellow = "\x1b[33m"
+    blue = "\x1b[34m"
 
-    on_prev_line = "\x1B[F\x1B[K"
+    on_prev_line = "\x1b[F\x1b[K"
 
 
 def print_station(station: Station, which_col_blue: Optional[int] = None):
@@ -42,7 +42,7 @@ def print_station(station: Station, which_col_blue: Optional[int] = None):
         station.id.ljust(ID_WIDTH),
         station.pkpplk.ljust(PKPPLK_WIDTH),
         (station.ibnr or "").ljust(IBNR_WIDTH),
-        station.name
+        station.name,
     ]
 
     if which_col_blue is not None:
@@ -134,13 +134,13 @@ def verify_other_attributes(stations: List[Station]) -> bool:
 
         wheelchair_value = station.other_tags.get("wheelchair")
         if wheelchair_value not in (None, "yes", "no"):
-            issues.append("Invalid wheelchair value: "
-                          f"{Color.yellow}{wheelchair_value}{Color.reset}")
+            issues.append(
+                f"Invalid wheelchair value: {Color.yellow}{wheelchair_value}{Color.reset}"
+            )
 
         ref_ztmw = station.other_tags.get("ref:ztmw")
         if ref_ztmw is not None and not re.fullmatch(r"[0-9]9[0-9][0-9]", ref_ztmw):
-            issues.append("Invalid ref:ztmw value: "
-                          f"{Color.yellow}{ref_ztmw}{Color.reset}")
+            issues.append(f"Invalid ref:ztmw value: {Color.yellow}{ref_ztmw}{Color.reset}")
 
         if issues:
             ok = False
@@ -154,8 +154,9 @@ def verify_other_attributes(stations: List[Station]) -> bool:
     return ok
 
 
-def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, List[Platform]]) \
-        -> bool:
+def verify_platforms(
+    stations_map: Dict[str, Station], all_platforms: Dict[str, List[Platform]]
+) -> bool:
     ok: bool = True
     print(f"{Color.dim}Checking platforms{Color.reset}")
 
@@ -166,36 +167,44 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
         station = stations_map.get(station_id)
         if station is None:
             ok = False
-            print(f"Invalid reference to station {Color.blue}{station_id}{Color.reset} "
-                  "from platforms:", ", ".join(sorted(i.id for i in platforms)))
+            print(
+                f"Invalid reference to station {Color.blue}{station_id}{Color.reset} "
+                "from platforms:",
+                ", ".join(sorted(i.id for i in platforms)),
+            )
             continue
 
         # Validate unique names
         platforms_by_name = group_by(platforms, key=lambda i: i.name)
         for duplicates in filter(lambda i: len(i) > 1, platforms_by_name.values()):
             name = duplicates[0].name
-            issues.append(f"Platform name {Color.yellow}{name}{Color.reset} reused by nodes: " +
-                          ", ".join(sorted(i.id for i in duplicates)))
+            issues.append(
+                f"Platform name {Color.yellow}{name}{Color.reset} reused by nodes: "
+                + ", ".join(sorted(i.id for i in duplicates))
+            )
 
         # Validate direction hints
-        direction_hints = Counter(chain.from_iterable(
-            osm_list(i.other_tags.get("direction", "")) for i in platforms
-        ))
+        direction_hints = Counter(
+            chain.from_iterable(osm_list(i.other_tags.get("direction", "")) for i in platforms)
+        )
         if direction_hints:
             # Check if only valid values are used, and check rules 1 and 3
             wildcard_used = direction_hints["*"] > 0
             for hint, count in direction_hints.items():
                 if hint not in VALID_HINTS:
-                    issues.append("Invalid direction hint used: "
-                                  f"{Color.yellow}{hint}{Color.reset}")
+                    issues.append(f"Invalid direction hint used: {Color.yellow}{hint}{Color.reset}")
 
                 elif wildcard_used and hint in HEADING_HINTS:
-                    issues.append(f"Station uses both the {Color.yellow}*{Color.reset} and "
-                                  f"{Color.yellow}{hint}{Color.reset} hints")
+                    issues.append(
+                        f"Station uses both the {Color.yellow}*{Color.reset} and "
+                        f"{Color.yellow}{hint}{Color.reset} hints"
+                    )
 
                 elif count > 1:
-                    issues.append(f"Hint {Color.blue}{hint}{Color.reset} used "
-                                  f"{Color.yellow}{count}{Color.reset} times")
+                    issues.append(
+                        f"Hint {Color.blue}{hint}{Color.reset} used "
+                        f"{Color.yellow}{count}{Color.reset} times"
+                    )
 
             used_heading_hints = {i for i in direction_hints if i in HEADING_HINTS}
 
@@ -213,10 +222,10 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
             distance_from_station = distance(platform.position, station.position)
             if distance_from_station > 100.0 or math.isnan(distance_from_station):
                 issues.append(
-                        f"Platform {Color.blue}{platform.name}{Color.reset}: "
-                        f"is {Color.yellow}{distance_from_station:.2f} m{Color.reset}"
-                        " away from the station node"
-                    )
+                    f"Platform {Color.blue}{platform.name}{Color.reset}: "
+                    f"is {Color.yellow}{distance_from_station:.2f} m{Color.reset}"
+                    " away from the station node"
+                )
 
             # Validate ref:ztmw
             ztmw_refs = osm_list(platform.other_tags.get("ref:ztmw", ""))
@@ -233,10 +242,10 @@ def verify_platforms(stations_map: Dict[str, Station], all_platforms: Dict[str, 
             wheelchair_value = platform.other_tags.get("wheelchair")
             if wheelchair_value not in (None, "yes", "no"):
                 issues.append(
-                        f"Platform {Color.blue}{platform.name}{Color.reset}: "
-                        "invalid wheelchair value: "
-                        f"{Color.yellow}{wheelchair_value}{Color.reset}"
-                    )
+                    f"Platform {Color.blue}{platform.name}{Color.reset}: "
+                    "invalid wheelchair value: "
+                    f"{Color.yellow}{wheelchair_value}{Color.reset}"
+                )
 
         # Print the collected issues
         if issues:
@@ -266,8 +275,11 @@ def verify_stop_positions(
         station = stations_map.get(station_id)
         if station is None:
             ok = False
-            print(f"Invalid reference to station {Color.blue}{station_id}{Color.reset} "
-                  "from stop positions:", ", ".join(sorted(i.id for i in stop_positions)))
+            print(
+                f"Invalid reference to station {Color.blue}{station_id}{Color.reset} "
+                "from stop positions:",
+                ", ".join(sorted(i.id for i in stop_positions)),
+            )
             continue
 
         # Validate the stop positions
@@ -282,11 +294,15 @@ def verify_stop_positions(
                     " away from the station node"
                 )
 
+            # Ensure "platforms" are provided
+            if not sp.platforms:
+                issues.append(
+                    f'Stop Position {Color.blue}{sp.id}{Color.reset}: has no "platforms" tag '
+                )
+
             # Validate "towards"
             if sp.towards == "":
-                issues.append(
-                    f"Stop Position {Color.blue}{sp.id}{Color.reset}: has no \"towards\" tag "
-                )
+                pass
             elif sp.towards == "fallback":
                 fallback_stop_positions += 1
             else:
@@ -296,14 +312,14 @@ def verify_stop_positions(
                     unknown_references_str = ", ".join(sorted(unknown_references))
                     issues.append(
                         f"Stop Position {Color.blue}{sp.id}{Color.reset}: "
-                        "\"towards\" tag references unknown stations - "
+                        '"towards" tag references unknown stations - '
                         f"{Color.yellow}{unknown_references_str}{Color.reset}"
                     )
 
         # Ensure exactly one fallback stop position
         if fallback_stop_positions != 1:
             issues.append(
-                f"Got {fallback_stop_positions} \"towards=fallback\" Stop Positions, "
+                f'Got {fallback_stop_positions} "towards=fallback" Stop Positions, '
                 "expected exactly 1"
             )
 
@@ -319,6 +335,7 @@ def verify_stop_positions(
         print(f"{Color.on_prev_line}✅ {Color.green}Stop Positions are OK{Color.reset}")
 
     return ok
+
 
 if __name__ == "__main__":
     data = OSMLoader.load_all("plrailmap.osm")
