@@ -3,6 +3,8 @@ from typing import Dict, List, Mapping, NamedTuple, Optional, Tuple
 from xml.sax import parse as sax_parse
 from xml.sax.handler import ContentHandler as SAXContentHandler
 
+from .util import osm_list
+
 
 class Station(NamedTuple):
     id: str
@@ -29,6 +31,13 @@ class StopPosition(NamedTuple):
     position: Tuple[float, float]
 
 
+class BusStop(NamedTuple):
+    id: str
+    station: str
+    direction_hints: list[str]
+    position: Tuple[float, float]
+
+
 class OSMLoader(SAXContentHandler):
     def __init__(self) -> None:
         super().__init__()
@@ -37,6 +46,7 @@ class OSMLoader(SAXContentHandler):
         self.stations: List[Station] = []
         self.platforms: Dict[str, List[Platform]] = {}
         self.stop_positions: Dict[str, List[StopPosition]] = {}
+        self.bus_stops: Dict[str, List[BusStop]] = {}
         self.in_node: bool = False
 
     def startElement(self, name: str, attrs: Mapping[str, str]):
@@ -46,7 +56,9 @@ class OSMLoader(SAXContentHandler):
             self.in_node = True
         elif name == "tag" and self.in_node:
             if attrs["k"].startswith("_"):
-                raise ValueError("Starting a tag with an underscore messes with processing")
+                raise ValueError(
+                    "Starting a tag with an underscore messes with processing"
+                )
             self.tags[attrs["k"]] = attrs["v"]
 
     def endElement(self, name: str):
@@ -84,8 +96,19 @@ class OSMLoader(SAXContentHandler):
                         id=self.tags["_id"],
                         station=station,
                         towards=self.tags.get("towards", ""),
-                        platforms=_unpack(self.tags.get("platforms", "")),
+                        platforms=osm_list(self.tags.get("platforms", "")),
                         position=self.position,
+                    )
+                )
+
+            elif self.tags.get("highway") == "bus_stop":
+                station = self.tags["ref:station"]
+                self.bus_stops.setdefault(station, []).append(
+                    BusStop(
+                        id=self.tags["_id"],
+                        station=station,
+                        position=self.position,
+                        direction_hints=osm_list(self.tags.get("direction", "")),
                     )
                 )
 
@@ -95,7 +118,3 @@ class OSMLoader(SAXContentHandler):
         with open(path, "rb") as stream:
             sax_parse(stream, handler)
         return handler
-
-
-def _unpack(x: str, sep: str = ";") -> list[str]:
-    return x.split(sep) if x else []

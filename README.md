@@ -131,3 +131,10 @@ The following tags may be optionally provided:
     for this stop_position to apply; or `fallback`. When a station uses stop positions, there must
     be at least exactly one fallback stop position. Offers and alternative matching method
     if reliable platform data is not available for trains.
+
+### Replacement Bus Stops
+
+To mark positions of bus replacements' stops, `highway=bus_stops` may be used.
+Such stops must have an `ref:station` node, with the ID of the parent station.
+If there are more than one replacement bus stops attached to a single station,
+direction hints (see (platform direction hints)[#direction-hints]) must be provided.
