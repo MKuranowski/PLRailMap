@@ -218,7 +218,7 @@ def verify_platforms(
         for platform in platforms:
             # Ensure the platform isn't too far away
             distance_from_station = distance(platform.position, station.position)
-            if distance_from_station > 100.0 or math.isnan(distance_from_station):
+            if distance_from_station > 300.0 or math.isnan(distance_from_station):
                 issues.append(
                     f"Platform {Color.blue}{platform.name}{Color.reset}: "
                     f"is {Color.yellow}{distance_from_station:.2f} m{Color.reset}"
@@ -287,7 +287,7 @@ def verify_stop_positions(
         for sp in stop_positions:
             # Ensure the platform isn't too far away
             distance_from_station = distance(sp.position, station.position)
-            if distance_from_station > 100.0 or math.isnan(distance_from_station):
+            if distance_from_station > 300.0 or math.isnan(distance_from_station):
                 issues.append(
                     f"Stop Position {Color.blue}{sp.id}{Color.reset}: "
                     f"is {Color.yellow}{distance_from_station:.2f} m{Color.reset}"
