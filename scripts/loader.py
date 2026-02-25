@@ -55,7 +55,7 @@ class OSMLoader(SAXContentHandler):
         self.in_way: bool = False
         self.in_node: bool = False
 
-    def startElement(self, name: str, attrs: SAXAttributes[str]) -> None:
+    def startElement(self, name: str, attrs: "SAXAttributes[str]") -> None:
         if name == "node":
             self.tags = {"_id": attrs["id"]}
             self.position = (float(attrs["lat"]), float(attrs["lon"]))
