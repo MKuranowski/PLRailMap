@@ -4,7 +4,7 @@ import re
 import sys
 from collections import Counter, defaultdict
 from itertools import chain
-from typing import Dict, List, Optional
+from typing import Container, Dict, List, Optional
 
 from .loader import BusStop, OSMLoader, Platform, Station, StopPosition
 from .util import distance, group_by, osm_list
@@ -140,7 +140,11 @@ def verify_uniq_ibnr(stations: List[Station]) -> bool:
     return ok
 
 
-def verify_other_attributes(stations: List[Station]) -> bool:
+def verify_other_attributes(
+    stations: List[Station],
+    stations_with_stop_positions: Container[str],
+    dangling_nodes: Container[str],
+) -> bool:
     ok: bool = True
 
     print(f"{Color.dim}Checking optional attributes{Color.reset}")
@@ -158,6 +162,16 @@ def verify_other_attributes(stations: List[Station]) -> bool:
         if ref_ztmw is not None and not re.fullmatch(r"[0-9]9[0-9][0-9]", ref_ztmw):
             issues.append(
                 f"Invalid ref:ztmw value: {Color.yellow}{ref_ztmw}{Color.reset}"
+            )
+
+        if (
+            station.pkpplk not in stations_with_stop_positions
+            and station.id in dangling_nodes
+            and station.pkpplk != "0"  # Allow "Lotnisko Modlin" to be dangling
+        ):
+            issues.append(
+                f"{Color.yellow}Not attached{Color.reset} to a railway=rail way, "
+                "or is missing public_transport=stop_position nodes"
             )
 
         if issues:
@@ -264,6 +278,7 @@ def verify_platforms(
 def verify_stop_positions(
     stations_map: Dict[str, Station],
     all_stop_positions: Dict[str, List[StopPosition]],
+    dangling_nodes: Container[str],
 ) -> bool:
     ok: bool = True
     print(f"{Color.dim}Checking stop positions{Color.reset}")
@@ -285,6 +300,14 @@ def verify_stop_positions(
         # Validate the stop positions
         fallback_stop_positions = 0
         for sp in stop_positions:
+            # Ensure the stop_position is attached to a railway=rail
+            if sp.id in dangling_nodes:
+                issues.append(
+                    f"Stop Position {Color.blue}{sp.id}{Color.reset}: "
+                    f"is {Color.yellow}not attached{Color.reset}"
+                    " to a railway=rail way"
+                )
+
             # Ensure the platform isn't too far away
             distance_from_station = distance(sp.position, station.position)
             if distance_from_station > 300.0 or math.isnan(distance_from_station):
@@ -445,11 +468,17 @@ if __name__ == "__main__":
     ok = verify_uniq_pkpplk(data.stations) and ok
     ok = verify_uniq_names(data.stations) and ok
     ok = verify_uniq_ibnr(data.stations) and ok
-    ok = verify_other_attributes(data.stations) and ok
+    ok = (
+        verify_other_attributes(data.stations, data.stop_positions, data.dangling_nodes)
+        and ok
+    )
 
     stations_map: Dict[str, Station] = {i.pkpplk: i for i in data.stations}
 
     ok = verify_platforms(stations_map, data.platforms) and ok
-    ok = verify_stop_positions(stations_map, data.stop_positions) and ok
+    ok = (
+        verify_stop_positions(stations_map, data.stop_positions, data.dangling_nodes)
+        and ok
+    )
     ok = verify_bus_stops(stations_map, data.bus_stops) and ok
     sys.exit(0 if ok else 1)

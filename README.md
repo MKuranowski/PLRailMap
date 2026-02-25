@@ -3,23 +3,10 @@ PLRailMap
 
 This is a small repository with a OSM file with the Polish Railway Network.
 
-This dataset is not yet complete. For now, it only contains station nodes for
-the following operators:
+The dataset is complete and contains both stations and railway lines. Partial replacement
+bus data is also available.
 
-- [x] PolRegio
-- [x] Koleje Mazowieckie
-- [x] PKP Intercity
-- [ ] PKP SKM Trójmiasto
-- [x] SKM Warszawa
-- [x] Koleje Śląskie
-- [ ] Koleje Dolnośląskie
-- [ ] Koleje Wielkopolskie
-- [ ] Warszawska Kolej Dojazdowa
-- [x] Koleje Małopolskie
-- [x] Łódzka Kolej Aglomeracyjna
-- [ ] Arriva RP
-
-In the future it would also be nice to also draw the rail lines.
+The primary usage is for [PolishTrainsGTFS](https://github.com/MKuranowski/PolishTrainsGTFS).
 
 License
 -------
@@ -50,6 +37,8 @@ Optional tags:
 
 
 If the station name is not in Polish, `name:pl` should also be present.
+
+Unless a station has `public_transport=stop_position`, it must be attached to a `railway=rail` way.
 
 ### Platforms
 
@@ -115,7 +104,7 @@ return station.platform_with_hint(closest_hint)
 
 ### Stop Positions
 
-By default, `railway=station` nodes should be part of a `railway=rail` way.
+By default, `railway=station` nodes must be part of a `railway=rail` way.
 
 However, there are a couple of edge-case stations, where such 1-to-1 mapping is not possible
 (see Opole Główne or Kraków Bieżanów). In these cases extra `public_transport=stop_position`
