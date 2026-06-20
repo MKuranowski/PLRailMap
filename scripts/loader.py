@@ -36,6 +36,7 @@ class BusStop(NamedTuple):
     id: str
     station: str
     direction_hints: list[str]
+    towards: list[str]
     position: Tuple[float, float]
 
 
@@ -126,6 +127,7 @@ class OSMLoader(SAXContentHandler):
                         station=station,
                         position=self.position,
                         direction_hints=osm_list(self.tags.get("direction", "")),
+                        towards=osm_list(self.tags.get("towards", "")),
                     )
                 )
 
