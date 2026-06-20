@@ -387,18 +387,24 @@ def verify_bus_stops(
 
         # Check for direction hint existence requirement
         if len(bus_stops) == 1:
-            stop_hints = bus_stops[0].direction_hints
-            if stop_hints != [] and stop_hints != ["*"]:
-                issues.append(
-                    "The only bus stop has incomplete direction hint coverage: "
-                    f"{Color.yellow}{';'.join(stop_hints)}{Color.reset}. "
-                    f"Expected no hints, or sole {Color.yellow}*{Color.reset} hint."
-                )
+            if bus_stops[0].direction_hints:
+                issues.append("The only bus stop has direction hints - expected none")
+            if bus_stops[0].towards:
+                issues.append("The only bus stop has towards hints - expected none")
         else:
-            without_hints = [i for i in bus_stops if not i.direction_hints]
+            if all(not i.direction_hints for i in bus_stops):
+                issues.append(
+                    "No bus stop has a direction hint - "
+                    "at least one must be provided when matching on towards hints fails"
+                )
+
+            without_hints = [
+                i for i in bus_stops if not i.direction_hints and not i.towards
+            ]
             for bus_stop in without_hints:
                 issues.append(
-                    f"Bus stop {Color.blue}{bus_stop.id}{Color.reset} has no hints"
+                    f"Bus stop {Color.blue}{bus_stop.id}{Color.reset} "
+                    "has no direction or towards hints"
                 )
 
         # Validate direction hints
@@ -406,6 +412,15 @@ def verify_bus_stops(
             chain.from_iterable(i.direction_hints for i in bus_stops)
         )
         issues.extend(_validate_station_direction_hints(direction_hints))
+
+        # Validate towards hints
+        towards_hints = Counter(chain.from_iterable(i.towards for i in bus_stops))
+        for hint, count in towards_hints.items():
+            if count > 1:
+                issues.append(
+                    f"Towards hint {Color.blue}{hint}{Color.reset} used "
+                    f"{Color.yellow}{count}{Color.reset} times"
+                )
 
         # Print the collected issues
         if issues:
@@ -440,12 +455,12 @@ def _validate_station_direction_hints(direction_hints: "Counter[str]") -> list[s
         elif wildcard_used and hint in HEADING_HINTS:
             issues.append(
                 f"Uses both the {Color.yellow}*{Color.reset} and "
-                f"{Color.yellow}{hint}{Color.reset} hints"
+                f"{Color.yellow}{hint}{Color.reset} direction hints"
             )
 
         elif count > 1:
             issues.append(
-                f"Hint {Color.blue}{hint}{Color.reset} used "
+                f"Direction hint {Color.blue}{hint}{Color.reset} used "
                 f"{Color.yellow}{count}{Color.reset} times"
             )
 

@@ -125,6 +125,21 @@ The following tags may be optionally provided:
 
 To mark positions of bus replacements' stops, `highway=bus_stops` may be used.
 Such stops must have an `ref:station` node, with the ID of the parent station.
+
 If there are more than one replacement bus stops attached to a single station,
-direction hints (see (platform direction hints)[#direction-hints]) must be provided.
-If it's impossible to assign direction hints (ex. multiple stops in the same geographic direction, but to different stations), `towards` tag should be used to indicate the station immediately following this station. When using `towards` tag, stops with direction hints have to be provided in case matching by next stations is impossible.
+direction hints (see (platform direction hints)[#direction-hints]) may
+be used to differentiate stops.
+
+In some cases, simple direction hints are not enough. In this case,
+the `towards` tag can be used to specify a `;`-separated list
+of station IDs immediately following this bus platform.
+
+When both `towards` and `direction` are present, both tags should be used for matching.
+Matches on `towards` should be preferred.
+
+For every given station, the following, rather complex rules apply:
+- If there is only one bus stop - it must not have any `direction` or `towards` hints.
+- Otherwise, if no bus stops use `towards` - all stops must have a `direction` tag,
+    and a single direction hint may only be present once.
+- Otherwise - at least one stop must have a `direction`, and a single direction hint may only be
+    present once, and a following station may only be present once.
