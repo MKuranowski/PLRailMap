@@ -1,3 +1,10 @@
+# ⚠️ Deprecation Warning
+
+Contents of this project were moved to [PolishTrainsGTFS](https://github.com/MKuranowski/PolishTrainsGTFS), specifically its [data/geo.osm file](https://github.com/MKuranowski/PolishTrainsGTFS#map-data-datageoosm).
+
+This repository was used by various different tools processing individual Polish train agencies data. However, starting in 2026, a unified data feed for the entire country is available, making those tools obsolete. Since there's no need to synchronize data across different repositories, it makes more sense to move the OSM file to where it is used. This is standard practice for my other projects.
+
+
 PLRailMap
 =========
 
